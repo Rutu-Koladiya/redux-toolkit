@@ -1,18 +1,20 @@
+@import "tailwindcss";
+
 .grid-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  width: 120px;
-  height: 120px;
+  width: 260px; 
+  height: 260px;
   margin: 1rem;
-  /* border: 1px solid black; */
+  /* gap: 1px; */
 }
-
 .grid-cell {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 34px;
+  height: 34px;
   border: 1px solid lightslategray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }

@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    {/* <Task /> */}
+    <Task />
       {/* <h2>CHALLENGE 1:</h2>
       <h3>Counter: {count}</h3>
       <button onClick={increment}>+ Increment</button>

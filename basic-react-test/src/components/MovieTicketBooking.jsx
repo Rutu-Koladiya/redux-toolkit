@@ -41,28 +41,36 @@ const MovieTicketBooking = () => {
   const toggleGrid = (id) => {
     setMovieList((prev) =>
       prev.map((movie) =>
-        movie.id === id ? { ...movie, isOpen: !movie.isOpen } : movie
+        movie.id === id
+          ? { ...movie, isOpen: !movie.isOpen }
+          : { ...movie, isOpen: false }
       )
     );
   };
 
   return (
-    <div>
+    <div className="p-4">
+      {/* <h1 className="text-2xl font-bold mb-4">🎬 Movie Ticket Booking</h1> */}
       {movieList?.length === 0 ? (
         <p>There's no movies for today!</p>
       ) : (
         <ul>
           {movieList?.map((movie) => (
             <li key={movie.id}>
-              {movie.name}{" "}
-              <button onClick={() => toggleGrid(movie.id)}>Book Ticket</button>
+              <div className="flex items-center justify-between bg-gray-100 p-3 rounded shadow">
+                <span className="text-lg font-semibold">{movie.name}</span>
+                <button
+                  onClick={() => toggleGrid(movie.id)}
+                  className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700"
+                >
+                  {movie.isOpen ? "Close" : "Book Ticket"}
+                </button>
+              </div>
               {movie.isOpen && <Grid movieId={movie.id} />}
             </li>
           ))}
         </ul>
       )}
-
-      {movieList.isOpen && <Grid />}
     </div>
   );
 };

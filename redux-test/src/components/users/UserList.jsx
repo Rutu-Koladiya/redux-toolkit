@@ -7,24 +7,31 @@ import {
 import { toast } from "react-toastify";
 import { useState, useMemo } from "react";
 import UserModal from "./UserModal";
-import { Button, Popconfirm, Table, Tag } from "antd";
+import { Button, Popconfirm, Table, Tag, Input, Select } from "antd";
+import useDebounce from "../../hook/useDebounce";
 
 const UserList = () => {
   const { data: users, isError, isLoading, error } = useGetUsersQuery();
   const [addUser] = useAddUserMutation();
   const [updateUser] = useUpdateUserMutation();
   const [deleteUser] = useDeleteUserMutation();
+  const { Search } = Input;
 
   const [editId, setEditId] = useState(null);
+
+  const [searchText, setSearchText] = useState("");
+  const [roleFilter, setRoleFilter] = useState("all");
+
+  const debounceText = useDebounce(searchText, 100);
 
   const selectedUser = useMemo(() => {
     if (!users || !editId || editId === "new") return null;
     return users?.find((user) => user.id === editId);
   });
 
-  const handleAddUser = () => setEditId("new")
+  const handleAddUser = () => setEditId("new");
   const handleEditUser = (id) => setEditId(id);
-  const handleCloseModal = () => setEditId(null)
+  const handleCloseModal = () => setEditId(null);
 
   const handleSubmit = async (values) => {
     try {
@@ -53,12 +60,33 @@ const UserList = () => {
     }
   };
 
+  const filteredUsers = useMemo(() => {
+    if (!users) return;
+
+    return users.filter((user) => {
+      const isMatchSearch =
+        user.name.toLowerCase().includes(debounceText.toLowerCase()) ||
+        user.email.toLowerCase().includes(debounceText.toLowerCase());
+
+      const isRoleMatch =
+        roleFilter === "all"
+          ? true
+          : roleFilter === "admin"
+          ? user.isAdmin
+          : !user.isAdmin;
+
+      return isMatchSearch && isRoleMatch;
+    });
+  }, [users, debounceText, roleFilter]);
+
   const columns = [
     {
       title: "Name",
       dataIndex: "name",
       key: "name",
       align: "center",
+      sorter: (a, b) => a.name.localeCompare(b.name),
+      sortDirections: ["ascend", "descend"],
     },
     {
       title: "Email",
@@ -131,6 +159,26 @@ const UserList = () => {
             + Add User
           </Button>
         </div>
+        <div className="flex flex-col md:flex-row gap-4 mb-4">
+          <Search
+            placeholder="Search by name or email"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            enterButton
+            allowClear
+            className="max-w-md"
+          />
+          <Select
+            defaultValue="all"
+            className="w-48"
+            onChange={(value) => setRoleFilter(value)}
+            options={[
+              { label: "All Users", value: "all" },
+              { label: "Admins", value: "admin" },
+              { label: "Non-Admins", value: "non-admin" },
+            ]}
+          />
+        </div>
       </div>
       {isLoading ? (
         <div className="text-center py-10 text-gray-500 text-lg">
@@ -140,10 +188,10 @@ const UserList = () => {
         <div className="overflow-x-auto shadow rounded">
           <Table
             columns={columns}
-            dataSource={users}
+            dataSource={filteredUsers}
             rowKey="id"
             loading={isLoading}
-            pagination={{ pageSize: 5 }}
+            pagination={{ pageSize: 10 }}
             bordered
           />
         </div>
