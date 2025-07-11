@@ -2,7 +2,7 @@ import React from 'react'
 
 const MUI = () => {
   return (
-    <div>
+    <div className='bg-'> 
       
     </div>
   )

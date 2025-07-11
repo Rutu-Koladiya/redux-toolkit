@@ -1,17 +1,24 @@
 import { Box } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
-  const [serachQuery, setSearchQuery] = useState("");
-  console.log(serachQuery);
-  
-  const location = useLocation();
+  const [query, setQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setSearchQuery(query);
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, [query]);
+
   return (
     <Box>
-      <Navbar onSearch={setSearchQuery} />
-      <Outlet context={{ serachQuery }} />
+      <Navbar onSearch={setQuery} />
+      <Outlet context={{ searchQuery }} />
     </Box>
   );
 };

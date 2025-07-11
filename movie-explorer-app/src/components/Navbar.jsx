@@ -56,9 +56,9 @@ const Navbar = ({ onSearch }) => {
   const [query, setQuery] = useState("");
 
   const handleSearch = (e) => {
-    if (e.key === "enter") {
-      onSearch(query);
-    }
+    const value = e.target.value;
+    setQuery(value);
+    onSearch(value);
   };
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -87,7 +87,7 @@ const Navbar = ({ onSearch }) => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-            value={query}
+              value={query}
               placeholder="Search Your Fav Movies…"
               inputProps={{ "aria-label": "search" }}
               onChange={(e) => setQuery(e.target.value)}

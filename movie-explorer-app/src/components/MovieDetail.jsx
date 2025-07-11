@@ -8,6 +8,7 @@ import {
   CircularProgress,
   Button,
   Container,
+  Chip
 } from "@mui/material";
 
 const MovieDetail = () => {
@@ -49,15 +50,16 @@ const MovieDetail = () => {
   }
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
+    <Container maxWidth="lg" sx={{ my: 4 }}>
       <Box display="flex" flexDirection={{ xs: "column", md: "row" }} gap={4}>
-        <Box sx={{ width: { xs: "100%", md: "40%" } }}>
+        <Box sx={{ width: { xs: "100%", md: "60%" } }}>
           <img
             src={
               movie?.poster_path
                 ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
                 : "https://via.placeholder.com/500x750?text=No+Image"
             }
+            loading="lazy"
             alt={movie?.title}
             style={{ width: "100%", borderRadius: 12 }}
           />
@@ -68,10 +70,17 @@ const MovieDetail = () => {
             {movie?.title}
           </Typography>
 
-          <Typography variant="body2" color="text.secondary" gutterBottom>
-            Genres:{" "}
-            {movie?.genres?.map((genre) => genre.name).join(", ") || "N/A"}
-          </Typography>
+          {movie.tagline && (
+            <Typography variant="h6" color="text.secondary" gutterBottom>
+              {movie.tagline}
+            </Typography>
+          )}
+
+          <Box display="flex" flexWrap="wrap" gap={1} mb={2}>
+            {movie.genres?.map((genre) => (
+              <Chip key={genre.id} label={genre.name} variant="outlined" />
+            ))}
+          </Box>
 
           <Typography variant="body1" paragraph>
             {movie?.overview}

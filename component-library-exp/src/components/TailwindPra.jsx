@@ -53,6 +53,7 @@ const TailwindPra = () => {
           </ul>
         </div>
       </nav>
+
       {/* UPcming hero */}
       <div
         className="h-screen bg-cover bg-center flex items-center justify-center"
@@ -89,6 +90,7 @@ const TailwindPra = () => {
           </form>
         </div>
       </div>
+
       {/* aspect ratio */}
       <div className="w-full max-w-sm bg-white rounded shadow overflow-hidden">
         <div className="aspect-[16/9]">
@@ -105,6 +107,7 @@ const TailwindPra = () => {
           </p>
         </div>
       </div>
+
       {/* blog post */}
       <div className="p-6 bg-gray-100 min-h-screen">
         <h2 className="text-3xl font-bold text-center mb-8">
@@ -137,6 +140,7 @@ const TailwindPra = () => {
           ))}
         </div>
       </div>
+
       {/* Responsive Hero Section */}
       <header className="bg-gray-100">
         <div className="flex flex-col md:flex-row items-center justify-between p-6 space-y-6 md:space-y-0 md:space-x-8">
@@ -163,6 +167,7 @@ const TailwindPra = () => {
           </div>
         </div>
       </header>
+
       {/* card */}
       <div className="max-w-sm p-6 bg-white shadow-lg rounded-lg hover:scale-105 transition space-y-2 text-gray-800">
         <h2 className="text-shadow-gray-950 font-bold text-3xl">Pro Plan</h2>
@@ -178,6 +183,7 @@ const TailwindPra = () => {
           Start Free Trial
         </button>
       </div>
+
       {/* Login form */}
       <div className="min-h-screen flex items-center justify-center bg-gray-200">
         <div className="w-full max-w-md bg-gray-100 rounded shadow-md p-6">
@@ -227,6 +233,7 @@ const TailwindPra = () => {
           </form>
         </div>
       </div>
+      
       {/* 
       <button className="bg-brandBlue-dark hover:bg-brandBlue-dark text-gray-700 px-6 py-3 rounded shadow-brand transition">
         Custom Brand Button
