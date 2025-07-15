@@ -2,6 +2,7 @@ https://www.vev.design/blog/3d-website-examples/
 https://www.syncfusion.com/pages/react-competitive-upgrade/
 192.168.0.147 
 roadmap.sh
+https://github.com/sudheerj/javascript-interview-questions?tab=readme-ov-file#table-of-contents
 
 Great question — and solid decision! Learning GSAP + Three.js (or React Three Fiber) together can open doors to building awesome 3D interactive websites, portfolios, or even mini-games. Here's a realistic, no-fluff timeline based on your current React/JS knowledge:
 🧠 Assumptions
