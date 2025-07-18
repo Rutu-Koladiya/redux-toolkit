@@ -16,10 +16,10 @@ const MainLayout = () => {
   }, [query]);
 
   return (
-    <Box>
+    <>
       <Navbar onSearch={setQuery} />
       <Outlet context={{ searchQuery }} />
-    </Box>
+    </>
   );
 };
 

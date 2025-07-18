@@ -1,11 +1,14 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
-import { Box, Typography, CircularProgress } from "@mui/material";
+import { Box, Typography, CircularProgress, Button } from "@mui/material";
+import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import axios from "axios";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import useInfiniteScroll from "../hook/useInfiniteScroll";
+import GenreDrawer from "./GenereDrawer";
 
 function MovieCard() {
   const { searchQuery } = useOutletContext();
@@ -15,6 +18,9 @@ function MovieCard() {
   const [expandedDescriptions, setExpandedDescriptions] = useState({});
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedGenres, setSelectedGenres] = useState([]);
+
   const lastMovieRef = useInfiniteScroll({
     loading,
     hasMore,
@@ -26,16 +32,22 @@ function MovieCard() {
   useEffect(() => {
     setMovies([]);
     setPage(1);
-  }, [searchQuery]);
+  }, [searchQuery, selectedGenres]);
 
   // Fetch movies from TMDB
-  const fetchMovies = async (curentPage) => {
+  const fetchMovies = async (curentPage, genres = []) => {
     try {
       setLoading(true);
-      const url = searchQuery
-        ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=${curentPage}`
-        : `https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}&page=${curentPage}`;
+      let url;
 
+      const genreParam =
+        genres.length > 0 ? `&with_genres=${genres.join(",")}` : "";
+
+      if (searchQuery) {
+        url = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchQuery}&page=${curentPage}`;
+      } else {
+        url = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc&page=${curentPage}${genreParam}`;
+      }
       const response = await axios.get(url);
       const newMovies = response.data.results;
       // console.log(newMovies.data.results);
@@ -54,8 +66,8 @@ function MovieCard() {
   };
 
   useEffect(() => {
-    fetchMovies(page);
-  }, [page, searchQuery]);
+    fetchMovies(page, selectedGenres);
+  }, [page, searchQuery, selectedGenres]);
 
   const toggleDescription = (id) => {
     setExpandedDescriptions((prev) => ({ ...prev, [id]: !prev[id] }));
@@ -63,6 +75,27 @@ function MovieCard() {
 
   return (
     <div>
+      <Button
+        onClick={() => setDrawerOpen(true)}
+        startIcon={<FilterAltIcon />}
+        sx={{
+          mt: 2,
+          ml: 2,
+          textAlign: "center",
+        }}
+      >
+        Filter
+      </Button>
+      <GenreDrawer
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        onApply={(genres) => {
+          setSelectedGenres(genres);
+          setPage(1);
+          setMovies([]);
+        }}
+      />
+
       <Box
         sx={{
           width: "100%",
@@ -79,14 +112,13 @@ function MovieCard() {
           const invalid =
             movie.title.length < 2 ||
             movie.release_date === "" ||
-            !movie.release_date; 
+            !movie.release_date;
 
           if (invalid) return null;
 
           return (
             <Card key={movie.id} ref={isLast ? lastMovieRef : null}>
               <CardActionArea
-                onClick={() => navigate(`/movie/${movie.id}`)}
                 // data-active={selectedCard === index ? "" : undefined}
                 sx={{
                   height: "100%",
@@ -106,6 +138,7 @@ function MovieCard() {
                     borderTopLeftRadius: "8px",
                     borderTopRightRadius: "8px",
                   }}
+                  onClick={() => navigate(`/movie/${movie.id}`)}
                 >
                   <img
                     src={

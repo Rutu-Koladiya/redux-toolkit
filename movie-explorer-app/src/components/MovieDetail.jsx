@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 // src/pages/MovieDetail.jsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -52,7 +53,7 @@ const MovieDetail = () => {
   return (
     <Container maxWidth="lg" sx={{ my: 4 }}>
       <Box display="flex" flexDirection={{ xs: "column", md: "row" }} gap={4}>
-        <Box sx={{ width: { xs: "100%", md: "60%" } }}>
+        <Box sx={{ width: { xs: "100%", md: "30%" } }}>
           <img
             src={
               movie?.poster_path
@@ -65,7 +66,7 @@ const MovieDetail = () => {
           />
         </Box>
 
-        <Box>
+        <Box sx={{ width: { xs: "100%", md: "70%" } }}>
           <Typography variant="h4" gutterBottom>
             {movie?.title}
           </Typography>

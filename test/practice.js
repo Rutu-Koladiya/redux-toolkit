@@ -399,3 +399,5 @@ console.log(findDeepestPath(obj1));
 
 const obj2 = { foo: 1, bar: 2 };
 console.log(findDeepestPath(obj2));
+
+
