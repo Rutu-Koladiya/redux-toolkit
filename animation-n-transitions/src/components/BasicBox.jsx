@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 
+
 const BasicBox = () => {
   return (
     <motion.div

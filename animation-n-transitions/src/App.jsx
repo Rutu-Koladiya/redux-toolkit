@@ -1,6 +1,7 @@
 import { motion, useScroll, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import Layout from "./components/Layout";
+import ScrollSection from "./components/ScrollSection";
 
 function App() {
   // const [isVisible, setIsVisible] = useState(false);
@@ -50,7 +51,8 @@ function App() {
 
   return (
     <div className="text-center font-mono">
-      <Layout />
+      {/* <Layout /> */}
+      <ScrollSection />
       {/* basic */}
       {/* <motion.div
         className="w-[200px] h-[200px] bg-amber-600 border"
