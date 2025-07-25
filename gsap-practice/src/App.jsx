@@ -1,10 +1,12 @@
-import { ScrollTriger }
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import TextAnimation from "./components/TextAnimation";
 
-
+gsap.registerPlugin(ScrollTrigger);
 function App() {
   return (
     <>
-      <h1>HELLO GSAP!</h1>
+      <TextAnimation />
     </>
   );
 }

@@ -123,4 +123,54 @@ If you want, I can make you:
 have to make 
 https://dribbble.com/shots/23018753-Cinema-Landing-Page
 https://dribbble.com/shots/24667756-Rollin-Bakery-Landing-Page-Animation
-https://dribbble.com/shots/24188583-E-commerce-Jewelry-Eluxee-Landing-Page
+https://dribbble.com/shots/24188583-E-commerce-Jewelry-Eluxee-Landing-Page -- > ITALIANO BIRTHSTONE
+
+
+{
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.autoSave": "onFocusChange",
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.wordWrap": "on",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "chat.commandCenter.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false,
+    "javascript": false
+  },
+  "cSpell.userWords": ["flate", "mereged", "occurance"],
+  "cSpell.enabled": false,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.autofetch": true,
+  "editor.suggest.showStatusBar": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    "ngClass",
+    "class:list",
+    ""
+  ],
+  "tailwindCSS.includeLanguages": {
+    "javascript": "javascript",
+    "javascriptreact": "javascript",
+    "typescript": "javascript",
+    "typescriptreact": "javascript",
+    "html": "html"
+  },
+  "tailwindCSS.experimental.classRegex": [
+    "clsx\\(([^)]*)\\)",
+    "classnames\\(([^)]*)\\)"
+  ],
+}

@@ -1,15 +1,16 @@
 import GsapExample from "./components/GsapExample"
 import GsapTo from "./components/GsapTo"
+import ScrollTriggerPrep from "./components/ScrollTriggerPrep"
 import Task from "./components/Task"
 
 function App() {
 
   return (
     <>
-      <h1>HUH</h1>
       {/* <GsapExample /> */}
       {/* <GsapTo /> */}
-      <Task />
+      {/* <Task /> */}
+      <ScrollTriggerPrep />
     </>
   )
 }
