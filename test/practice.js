@@ -400,4 +400,63 @@ console.log(findDeepestPath(obj1));
 const obj2 = { foo: 1, bar: 2 };
 console.log(findDeepestPath(obj2));
 
+// CSV to JSON
 
+const csvToJson = (str) => {
+  const data = str.trim().split("\n");
+
+  const headers = data[0].split(",").map((d) => d.trim());
+
+  const result = data.slice(1).map((user) => {
+    const values = user.split(",").map((d) => d.trim());
+
+    const obj = {};
+
+    headers.forEach((element, index) => {
+      obj[element] = values[index];
+    });
+    return obj;
+  });
+  return result;
+};
+
+const csv = `name, email, phone
+John Doe, johndoe@example.com, 555-1234
+Jane Smith, janesmith@example.com, 555-5678`;
+
+console.log(csvToJson(csv));
+
+// Q2) Majority Element
+
+// Given an array of integers, find the majority element, i.e., the element that appears more than half the length of the array (n / 2 times). If no such element exists, return -1.
+
+const findMajorityElement = (arr) => {
+  const length = arr.length;
+  const obj = {};
+
+  arr.forEach((element) => {
+    if (!obj[element]) {
+      obj[element] = 1;
+    } else {
+      obj[element] += 1;
+    }
+  });
+
+  for (let key in obj) {
+    if (obj[key] > length / 2) {
+      return Number(key);
+    }
+  }
+  return -1;
+};
+
+const arrs1 = [1, 1, 2, 1, 3];
+const arrs2 = [1, 2, 3];
+
+console.log(findMajorityElement(arrs1));
+console.log(findMajorityElement(arrs2));
+// Input: [1,1,2,1,3]
+// Output: 1
+
+// Input: [1,2,3]
+// Output: -1

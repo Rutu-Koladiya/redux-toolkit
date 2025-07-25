@@ -21,6 +21,9 @@ const findMajorityElement = (arr) => {
     } else {
       obj[element] += 1;
     }
+    // if (obj[element] > length / 2) {
+    //   return Number(element);
+    // }
   });
   for (let key in obj) {
     if (obj[key] > length / 2) {
@@ -32,7 +35,7 @@ const findMajorityElement = (arr) => {
 };
 
 const input1 = [1, 1, 2, 1, 3];
-const input2 = [1,2,3]
+const input2 = [1, 2, 3];
 
 console.log(findMajorityElement(input1));
 console.log(findMajorityElement(input2));
