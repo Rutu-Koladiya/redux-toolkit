@@ -5,12 +5,12 @@ import { menuItems } from "../CONSTANTS";
 import { useState } from "react";
 
 const Hero = () => {
-  const [isActive, setIsActive] = useState(1);
+  const [isActive, setIsActive] = useState(0);
   useGSAP(() => {
     const tl = gsap.timeline();
 
     tl.from("h2", {
-      autoAlpha: 0,
+      opacity: 0,
       yPercent: 100,
       duration: 0.6,
       ease: "power1.out",
@@ -21,7 +21,7 @@ const Hero = () => {
     tl.from(
       "h1",
       {
-        autoAlpha: 0,
+        opacity: 0,
         yPercent: 100,
         duration: 0.6,
         ease: "power1.out",
@@ -32,7 +32,7 @@ const Hero = () => {
     );
 
     tl.from(
-      "ul li",
+      "ul li span",
       {
         opacity: 0,
         yPercent: 50,
