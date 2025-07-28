@@ -20,7 +20,7 @@ const Text = () => {
         start: "top 70%",
         end: "bottom 30%",
         scrub: true,
-        markers: true,
+        // markers: true,
       },
     });
 

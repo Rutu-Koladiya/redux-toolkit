@@ -13,8 +13,8 @@ function App() {
       {/* <Hero /> */}
       <HeroSection />
       <About />
-      {/* <Text />
-      <div className="h-dvh bg-black" /> */}
+      <Text />
+      <div className="h-dvh bg-black" />
     </>
   );
 }

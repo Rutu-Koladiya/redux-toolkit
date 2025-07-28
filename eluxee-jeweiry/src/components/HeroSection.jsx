@@ -45,7 +45,7 @@ const HeroSection = () => {
       {
         autoAlpha: 0,
         scale: 1.1,
-        yPercent: 80,
+        // yPercent: 80,
         duration: 0.6,
         ease: "linear",
       },
