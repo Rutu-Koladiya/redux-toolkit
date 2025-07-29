@@ -13,7 +13,7 @@ const Hero = () => {
       opacity: 0,
       yPercent: 100,
       duration: 0.6,
-      ease: "power1.out",
+      ease: "linear",
       force3D: true,
       transformOrigin: "top",
     });
@@ -24,11 +24,11 @@ const Hero = () => {
         opacity: 0,
         yPercent: 100,
         duration: 0.6,
-        ease: "power1.out",
+        ease: "linear",
         force3D: true,
         transformOrigin: "top",
       },
-      "<0.2" // Waits until 40% of previous is done
+      // "<0.2" // Waits until 40% of previous is done
     );
 
     tl.from(
@@ -72,7 +72,7 @@ const Hero = () => {
 
   return (
     <div
-      className="min-h-[100vh] py-6 bg-gradient-to-b from-[#faf7f3] to-[#f2e9e1]
+      className="min-h-[100vh] py-6 bg-[#f8f4f0]
 "
     >
       <div className="flex flex-col justify-center items-center space-x-0.5 color-black">

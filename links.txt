@@ -174,3 +174,12 @@ https://dribbble.com/shots/24188583-E-commerce-Jewelry-Eluxee-Landing-Page -- > 
     "classnames\\(([^)]*)\\)"
   ],
 }
+
+// | Syntax  | Meaning                                                                |
+// | ------- | ---------------------------------------------------------------------- |
+// | `<`     | Start at the **same time** as the **previous** animation.              |
+// | `> `    | Start **after** the previous animation **finishes**.                   |
+// | `<0.2`  | Start **0.2 seconds after** the **start** of the previous animation.   |
+// | `>0.2`  | Start **0.2 seconds after** the **end** of the previous animation.     |
+// | `>-0.1` | Start **0.1 seconds before** the **previous animation ends**.          |
+// | `<-0.1` | Start **0.1 seconds before** the **previous animation starts** (rare). |

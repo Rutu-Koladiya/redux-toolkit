@@ -5,6 +5,7 @@ import Hero from "./components/Hero";
 import Text from "./components/Text";
 import About from "./components/About";
 import HeroSection from "./components/HeroSection";
+import Slider from "./components/Slider";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <HeroSection />
       <About />
       <Text />
+      <Slider />
       <div className="h-dvh bg-black" />
     </>
   );

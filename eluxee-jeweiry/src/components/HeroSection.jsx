@@ -10,43 +10,46 @@ const HeroSection = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    tl.from("h2", {
-      autoAlpha: 0,
+    tl.from(".headline", {
+      opacity: 0,
       yPercent: 100,
       duration: 0.6,
-      ease: "power1.out",
+      ease: "power2.out",
+      force3D: true,
+      transformOrigin: "top",
     });
 
     tl.from(
-      "h1",
+      ".name",
       {
-        autoAlpha: 0,
+        opacity: 0,
         yPercent: 100,
         duration: 0.6,
-        ease: "power1.out",
+        ease: "power2.out",
+        force3D: true,
+        transformOrigin: "top",
       },
-      "<0.2"
+      "<0.5"
     );
 
     tl.from(
       ".nav-items",
       {
         autoAlpha: 0,
-        yPercent: 50,
+        yPercent: 40,
         duration: 0.6,
-        stagger: 0.1,
+        stagger: 0.15,
         ease: "power1.in",
       },
-      "<0.15"
+      "<0.3"
     );
 
     tl.from(
       ".hero-img",
       {
         autoAlpha: 0,
-        scale: 1.1,
-        // yPercent: 80,
-        duration: 0.6,
+        scale: 1.05,
+        duration: 1,
         ease: "linear",
       },
       "<0.4"
@@ -65,13 +68,13 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-[#faf7f3] to-[#f2e9e1] flex flex-col">
+    <section className="relative w-full h-screen overflow-hidden bg-[#fefbf7] flex flex-col">
       {/* Top Content */}
       <div className="relative z-20 flex flex-col justify-center items-center text-center flex-1 px-4 pt-6">
         <h2 className="headline text-[18px] md:tracking-[0.3em] tracking-wide font-stix text-[#222831]">
           RADIATE ELEGANCE WITH
         </h2>
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl tracking-widest font-italianno drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] text-[#222831] mt-2">
+        <h1 className="name text-4xl sm:text-5xl lg:text-6xl tracking-widest font-italianno drop-shadow-[0_2px_2px_rgba(0,0,0,0.1)] text-[#222831] mt-2">
           Eluxee Jewelry
         </h1>
 
@@ -83,7 +86,7 @@ const HeroSection = () => {
                 key={index}
                 // onClick={() => setIsActive(index)}
                 className="relative group px-4 md:py-2 rounded-fulltext-[#222831]
-                hover:text-[#e0a800]"
+                hover:text-[#c8a97e]"
               >
                 <span className="nav-items relative z-10">{menuItem}</span>
                 {/* <span
@@ -104,7 +107,7 @@ const HeroSection = () => {
           alt="hero image"
           className="absolute top-0 left-0 hero-img w-full h-full object-cover"
         />
-        <span className="menu absolute bottom-4 right-8 xl:right-26 w-[50px] h-[50px] rounded-full bg-black text-white flex items-center justify-center font-bold" />
+        <span className="menu absolute bottom-4 right-8 xl:right-26 w-[50px] h-[50px] rounded-full bg-[#fefbf7] text-[#fefbf7] flex items-center justify-center font-bold" />
       </div>
     </section>
   );

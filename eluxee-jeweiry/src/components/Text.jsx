@@ -48,16 +48,22 @@ const Text = () => {
     });
   }, []);
   return (
-    <div ref={containerRef}>
-      <h3
-        ref={textRef}
-        className="px-4 md:px-28 font-['STIX_Two_Text'] text-xl text-center md:tracking-[0.2em] tracking-wide leading-8"
-      >
-        JEWELRY IS MORE THAN JUST AN ACCESSORY, IT’S AN EXPRESSION AND{" "}
-        <ImageInText /> TIMELESS BEAUTY THAT’S THE REASON WHY EACH PIECE IN OUR
-        COLLECTION IS THOUGHTFULLY CURATED AND EXPERTLY CRAFTED USING{" "}
-        <ImageInText /> THE HIGHEST QUALITY MATERIALS <ImageInText />
-      </h3>
+    <div className="h-screen relative" ref={containerRef}>
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/hero.jpg')" }}
+      />
+      <div className="info absolute z-10 h-4/5 w-4/5 p-4 bg-[#fefbf7] shadow-2xl left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+        <h3
+          ref={textRef}
+          className="px-4 font-['STIX_Two_Text'] text-xl md:tracking-[0.2em] tracking-wide leading-8"
+        >
+          JEWELRY IS MORE THAN JUST AN ACCESSORY, IT’S AN EXPRESSION AND{" "}
+          <ImageInText /> TIMELESS BEAUTY THAT’S THE REASON WHY EACH PIECE IN
+          OUR COLLECTION IS THOUGHTFULLY CURATED AND EXPERTLY CRAFTED USING{" "}
+          <ImageInText /> THE HIGHEST QUALITY MATERIALS <ImageInText />
+        </h3>
+      </div>
     </div>
   );
 };
