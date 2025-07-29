@@ -124,7 +124,7 @@ const About = () => {
         <div className="marquee-track" ref={marqueeRef}>
           {[...marqueeImages, ...marqueeImages].map((img, i) => (
             <div
-              className="marquee-item bg-gray-500/20 aspect-square w-44"
+              className="marquee-item bg-[#e8e9eb]/40 aspect-square w-44"
               key={i}
             >
               <img

@@ -125,6 +125,7 @@ https://dribbble.com/shots/23018753-Cinema-Landing-Page
 https://dribbble.com/shots/24667756-Rollin-Bakery-Landing-Page-Animation
 https://dribbble.com/shots/24188583-E-commerce-Jewelry-Eluxee-Landing-Page -- > ITALIANO BIRTHSTONE
 
+https://codepen.io/mikun/pen/YWgqEX
 
 {
   "[javascriptreact]": {

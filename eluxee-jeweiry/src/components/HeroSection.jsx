@@ -80,13 +80,13 @@ const HeroSection = () => {
 
         {/* Navbar */}
         <nav className="mt-8 md:mt-10">
-          <ul className="flex flex-col md:flex-row flex-wrap justify-center gap-1 md:gap-4 text-[#222831] font-[STIX Two Text] tracking-wide">
+          <ul className="stix flex flex-col md:flex-row flex-wrap justify-center gap-1 md:gap-4 text-[#5e5e5e]  tracking-wide">
             {menuItems?.map((menuItem, index) => (
               <li
                 key={index}
                 // onClick={() => setIsActive(index)}
                 className="relative group px-4 md:py-2 rounded-fulltext-[#222831]
-                hover:text-[#c8a97e]"
+                hover:text-[#c8a97e] uppercase"
               >
                 <span className="nav-items relative z-10">{menuItem}</span>
                 {/* <span

@@ -3,72 +3,53 @@ import { gsap } from "gsap";
 
 const SwipeSlider = () => {
   const containerRef = useRef(null);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [currentX, setCurrentX] = useState(0);
-  const [translateX, setTranslateX] = useState(0);
-
-  const slideWidth = 300; // Adjust based on your card width
+  const slideWidth = 300; // Adjust if needed
   const totalSlides = 5;
 
-  const handlePointerDown = (e) => {
-    setIsDragging(true);
-    setStartX(e.clientX || e.touches?.[0]?.clientX);
-  };
+  const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handlePointerMove = (e) => {
-    if (!isDragging) return;
-    const x = e.clientX || e.touches?.[0]?.clientX;
-    const diff = x - startX;
-    setCurrentX(diff);
-    gsap.set(containerRef.current, {
-      x: translateX + diff,
-    });
-  };
+  const handleSlide = (direction) => {
+    let newSlide = currentSlide;
 
-  const handlePointerUp = () => {
-    setIsDragging(false);
-    const threshold = slideWidth / 4;
-    const totalDrag = currentX;
-
-    let newTranslate = translateX;
-
-    if (
-      totalDrag < -threshold &&
-      Math.abs(translateX) < (totalSlides - 1) * slideWidth
-    ) {
-      newTranslate = translateX - slideWidth;
-    } else if (totalDrag > threshold && translateX < 0) {
-      newTranslate = translateX + slideWidth;
+    if (direction === "next" && currentSlide < totalSlides - 1) {
+      newSlide = currentSlide + 1;
+    } else if (direction === "prev" && currentSlide >= 0) {
+      newSlide = currentSlide - 1;
     }
 
-    setTranslateX(newTranslate);
-    setCurrentX(0);
+    setCurrentSlide(newSlide);
+
+    const newTranslateX = -slideWidth * newSlide;
 
     gsap.to(containerRef.current, {
-      x: newTranslate,
-      scale: 1.2,
-      duration: 0.5,
+      x: newTranslateX,
+      duration: 0.6,
       ease: "power3.out",
     });
   };
 
   return (
-    <div className="overflow-hidden w-full h-screen relative mx-auto select-none">
+    <div className="overflow-hidden w-full h-screen relative flex items-center justify-center select-none">
+      {/* Arrow Buttons */}
+      <button
+        onClick={() => handleSlide("prev")}
+        className="absolute left-4 z-10 text-3xl bg-white/80 hover:bg-white px-4 py-2 rounded-full shadow-lg"
+      >
+        ←
+      </button>
+
+      <button
+        onClick={() => handleSlide("next")}
+        className="absolute right-4 z-10 text-3xl bg-white/80 hover:bg-white px-4 py-2 rounded-full shadow-lg"
+      >
+        →
+      </button>
+
+      {/* Slider Container */}
       <div
         ref={containerRef}
-        className="flex gap-28 lg:gap-42 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"
-        style={{
-          touchAction: "none",
-          cursor: isDragging ? "grabbing" : "grab",
-        }}
-        onPointerDown={handlePointerDown}
-        onPointerMove={handlePointerMove}
-        onPointerUp={handlePointerUp}
-        onPointerLeave={handlePointerUp}
-        onTouchStart={handlePointerDown}
-        onTouchMove={handlePointerMove}
-        onTouchEnd={handlePointerUp}
+        className="flex gap-28 lg:gap-42"
+        style={{ transform: `translateX(0px)` }}
       >
         {[...Array(totalSlides)].map((_, i) => (
           <div

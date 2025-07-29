@@ -16,7 +16,7 @@ body {
   color: #1c1c1c; /* Primary text */
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4  {
   color: #3e2e2c;
 }
 
@@ -26,6 +26,10 @@ p {
 
 .accent {
   color: #c8a97e; /* Gold accent text */
+}
+
+.stix {
+  font-family: "STIX Two Text", serif;
 }
 
 .marquee-wrapper {
