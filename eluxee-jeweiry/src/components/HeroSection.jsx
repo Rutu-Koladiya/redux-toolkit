@@ -14,7 +14,7 @@ const HeroSection = () => {
       opacity: 0,
       yPercent: 100,
       duration: 0.6,
-      ease: "power2.out",
+      ease: "power3.out",
       force3D: true,
       transformOrigin: "top",
     });
@@ -59,7 +59,7 @@ const HeroSection = () => {
       ".menu",
       {
         autoAlpha: 0,
-        scale: 0,
+        scale: 1.5,
         ease: "back.out(1.7)",
         duration: 0.6,
       },
@@ -107,7 +107,9 @@ const HeroSection = () => {
           alt="hero image"
           className="absolute top-0 left-0 hero-img w-full h-full object-cover"
         />
-        <span className="menu absolute bottom-4 right-8 xl:right-26 w-[50px] h-[50px] rounded-full bg-[#fefbf7] text-[#fefbf7] flex items-center justify-center font-bold" />
+        <span className="menu absolute bottom-10 right-0 xl:right-26 w-20 h-20 rounded-full bg-[#fefbf7] text-[#222831] flex items-center justify-center font-bold">
+          <i class="ri-menu-2-line ri-2x"></i>
+        </span>
       </div>
     </section>
   );

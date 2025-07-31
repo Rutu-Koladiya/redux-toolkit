@@ -1,10 +1,10 @@
 import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
 
-import Hero from "./components/Hero";
-import Text from "./components/Text";
-import About from "./components/About";
 import HeroSection from "./components/HeroSection";
+import AboutSection from "./components/AboutSection";
+import InfoSection from "./components/InfoSection";
+
 import Slider from "./components/Slider";
 import Service from "./components/Service";
 gsap.registerPlugin(ScrollTrigger, SplitText);
@@ -12,10 +12,9 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 function App() {
   return (
     <>
-      {/* <Hero /> */}
       <HeroSection />
-      <About />
-      <Text />
+      <AboutSection />
+      <InfoSection />
       <Slider />
       <Service />
       <div className="h-dvh bg-black" />
