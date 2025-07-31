@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -50,14 +50,14 @@ const String = () => {
       </svg>
 
       <svg width="500" height="350" viewBox="0 0 300 150">
-      <path
-        ref={pathRef}
-        d="M10 100 Q250 0 490 200"
-        stroke="black"
-        fill="transparent"
-        strokeWidth="3"
-      />
-    </svg>
+        <path
+          ref={pathRef}
+          d="M10 100 Q250 0 490 200"
+          stroke="black"
+          fill="transparent"
+          strokeWidth="3"
+        />
+      </svg>
     </>
   );
 };
