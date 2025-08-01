@@ -1,4 +1,4 @@
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, SplitText } from "gsap/all";
 import gsap from "gsap";
 import TextAnimation from "./components/TextAnimation";
 import String from "./components/String";
@@ -6,8 +6,10 @@ import StringSVG from "./components/StringSVG";
 import RegisterEffects from "./components/RegisterEffects";
 import Ease from "./components/Ease";
 import Cursor from "./components/Cursor";
+import Basic from "./components/BasicLevel1";
+import BasicLevel2 from "./components/BasicLevel2";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 function App() {
   return (
     <>
@@ -16,7 +18,9 @@ function App() {
       {/* <StringSVG /> */}
       {/* <RegisterEffects /> */}
       {/* <Ease /> */}
-      <Cursor />
+      {/* <Cursor /> */}
+      {/* <Basic /> */}
+      <BasicLevel2 />
     </>
   );
 }
