@@ -1,4 +1,5 @@
-import { ScrollTrigger, SplitText } from "gsap/all";
+import { ScrollTrigger, SplitText, ScrollToPlugin } from "gsap/all";
+import { TextPlugin } from "gsap/TextPlugin";
 import gsap from "gsap";
 import TextAnimation from "./components/TextAnimation";
 import String from "./components/String";
@@ -8,9 +9,11 @@ import Ease from "./components/Ease";
 import Cursor from "./components/Cursor";
 import Basic from "./components/BasicLevel1";
 import BasicLevel2 from "./components/BasicLevel2";
+import TheCodeCreative from "./components/TheCodeCreative";
 
-gsap.registerPlugin(ScrollTrigger, SplitText);
+gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin, ScrollToPlugin);
 function App() {
+
   return (
     <>
       {/* <TextAnimation /> */}
@@ -20,7 +23,8 @@ function App() {
       {/* <Ease /> */}
       {/* <Cursor /> */}
       {/* <Basic /> */}
-      <BasicLevel2 />
+      {/* <BasicLevel2 /> */}
+      <TheCodeCreative />
     </>
   );
 }
