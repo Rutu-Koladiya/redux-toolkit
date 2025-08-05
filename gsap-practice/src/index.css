@@ -3,3 +3,22 @@
 * {
   box-sizing: border-box;
 }
+
+.future {
+  color: red;
+  font-size: larger;
+}
+
+.end {
+  color: rebeccapurple;
+  font-size: xx-large;
+}
+
+nav a:not(:last-child)::after {
+  content: "";
+  background-color: #fff;
+  width: 1px;
+  height: 40px;
+  opacity: 0.5;
+  margin: 10px 0;
+}
