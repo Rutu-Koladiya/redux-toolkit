@@ -22,20 +22,57 @@
 // Input: "abc(defgh)"
 // Output: NO
 
+// const isMatchingConstraints = (str) => {
+//   const data = str.split("");
+
+//   if (data.includes("(")) {
+//     const startPosition = data.indexOf("(");
+
+//     for (let i = startPosition; i < startPosition + 4; i++) {
+//       if (data[i] === ")") {
+//         return "YES";
+//       }
+//     }
+//     return "NO";
+//   }
+// };
+
 const isMatchingConstraints = (str) => {
-  const data = str.split("");
+  const used = new Array(str.length).fill(false); // tracks matched brackets
 
-  if (data.includes("(")) {
-    const startPosition = data.indexOf("(");
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === "(") {
+      let matched = false;
 
-    for (let i = startPosition; i < startPosition + 4; i++) {
-      if (data[i] === ")") {
-        return "YES";
+      // Look ahead up to 4 characters (inclusive of current position)
+      for (let j = i + 1; j <= i + 4 && j < str.length; j++) {
+        if (str[j] === ")" && !used[j]) {
+          used[i] = true;
+          used[j] = true;
+          matched = true;
+          break;
+        }
       }
+
+      if (!matched) return "NO";
     }
-    return "NO";
   }
+
+  // Final check: ensure no unmatched `)` exists
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === ")" && !used[i]) {
+      return "NO";
+    }
+  }
+
+  return "YES";
 };
+
+// Test cases
+console.log(isMatchingConstraints("a(b)c)d")); // YES
+console.log(isMatchingConstraints("abc(defgh)")); // NO
+console.log(isMatchingConstraints("((a)b)c)")); // NO
+console.log(isMatchingConstraints("a(b(cd)e)f")); // YES
 
 const input1 = "a(b)c)d";
 const input2 = "abc(defgh)";

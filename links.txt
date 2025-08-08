@@ -184,3 +184,351 @@ https://codepen.io/mikun/pen/YWgqEX
 // | `>0.2`  | Start **0.2 seconds after** the **end** of the previous animation.     |
 // | `>-0.1` | Start **0.1 seconds before** the **previous animation ends**.          |
 // | `<-0.1` | Start **0.1 seconds before** the **previous animation starts** (rare). |
+
+import React, { useMemo, useRef, useState } from "react";
+import {
+  Button,
+  Card,
+  CardBody,
+  Col,
+  Container,
+  Input,
+  Label,
+  Row,
+} from "reactstrap";
+
+import useLabTitle from "../../../hooks/useLabTitle";
+import { useFilters } from "../../../hooks/useFilters";
+
+import { labApiTagTypes } from "../../../tagTypes";
+
+import BreadCrumb from "../../../Components/Common/BreadCrumb";
+import BaseTable from "../../../Components/Common/BaseTable";
+import AddOrEditAddres from "./Components/AddOrEditAddres";
+
+const initialAddOrEditState = {
+  isAdd: false,
+  isEdit: false,
+  id: "",
+};
+
+const Address = () => {
+  const [isAddOpen, setIsAddOpen] = useState(initialAddOrEditState);
+
+  const resetPageRef = useRef();
+
+  const initialFilterValue = {
+    city: "",
+    state: "",
+    country: "",
+  };
+
+  const [filters, debounceFilters, onFilterChange, onResetFilter] =
+    useFilters(initialFilterValue);
+
+  useLabTitle("Address");
+
+  const resetPage = () => {
+    if (resetPageRef.current) {
+      resetPageRef.current();
+    }
+  };
+
+  const resetFilters = () => {
+    onResetFilter(initialFilterValue);
+    resetPage();
+  };
+
+  const serverSidePaginationConfig = useMemo(
+    () => ({
+      endpoint: "/address/get_available_data",
+      tags: [labApiTagTypes.ADDRESS],
+      query: {
+        search: debounceFilters.city,
+        state: debounceFilters.state,
+        country: debounceFilters.country,
+      },
+    }),
+    [debounceFilters]
+  );
+
+  const columnData = useMemo(
+    () => [
+      {
+        title: "Sr. No.",
+        renderCell: (_, index, page, perPage) =>
+          (page - 1) * perPage + index + 1,
+        columnProps: { style: { width: "7%" } },
+      },
+      {
+        title: "City",
+        field: "city",
+        columnProps: { style: { width: "20%" } },
+      },
+      {
+        title: "State",
+        field: "state",
+        columnProps: { style: { width: "20%" } },
+      },
+      {
+        title: "Country",
+        field: "country",
+        columnProps: { style: { width: "20%" } },
+      },
+    ],
+    []
+  );
+
+  return (
+    <>
+      {(isAddOpen.isAdd || isAddOpen.isEdit) && (
+        <AddOrEditAddres
+          isOpen={!!isAddOpen.isAdd || isAddOpen.isEdit}
+          handleClose={() => setIsAddOpen(initialAddOrEditState)}
+          id={isAddOpen.id}
+        />
+      )}
+
+      <div className="page-content">
+        <BreadCrumb title="Address" />
+        <Container fluid className="py-2 px-1">
+          <Card>
+            <CardBody>
+              <Row>
+                <Col lg={3} xl={2} className="mb-2">
+                  <Label className="mb-0">City</Label>
+                  <Input
+                    type="string"
+                    placeholder="City"
+                    value={filters.city}
+                    onChange={(e) => onFilterChange("city", e.target.value)}
+                  />
+                </Col>
+
+                <Col lg={3} xl={2} className="mb-2">
+                  <Label className="mb-0">State</Label>
+                  <Input
+                    type="string"
+                    placeholder="State"
+                    value={filters.state}
+                    onChange={(e) => onFilterChange("state", e.target.value)}
+                  />
+                </Col>
+
+                <Col lg={3} xl={2} className="mb-2">
+                  <Label className="mb-0">Country</Label>
+                  <Input
+                    type="string"
+                    placeholder="Country"
+                    value={filters.country}
+                    onChange={(e) => onFilterChange("country", e.target.value)}
+                  />
+                </Col>
+
+                <Col className="d-flex align-items-end justify-content-between mb-2 gap-2">
+                  <Button color="light" onClick={resetFilters}>
+                    <i className="ri-brush-line" />
+                    Clear
+                  </Button>
+
+                  <Button
+                    color="primary"
+                    onClick={() =>
+                      setIsAddOpen({ ...initialAddOrEditState, isAdd: true })
+                    }
+                  >
+                    <i className="ri-add-line" />
+                    Add
+                  </Button>
+                </Col>
+              </Row>
+              <div>
+                <BaseTable
+                  className="mb-0"
+                  headerClassName="table table-light"
+                  columns={columnData}
+                  paginationType="serverSide"
+                  serverSidePaginationConfig={serverSidePaginationConfig}
+                  registerResetPage={(cb) => (resetPageRef.current = cb)}
+                />
+              </div>
+            </CardBody>
+          </Card>
+        </Container>
+      </div>
+    </>
+  );
+};
+
+export default Address;
+
+import React, { useEffect } from "react";
+import {
+  Button,
+  Col,
+  Form,
+  Input,
+  Label,
+  Modal,
+  ModalBody,
+  ModalFooter,
+  ModalHeader,
+  Row,
+  Spinner,
+} from "reactstrap";
+
+import { useFormik } from "formik";
+import * as Yup from "yup";
+
+import {
+  useLazyGetQuery,
+  usePostMutation,
+  usePutMutation,
+} from "../../../../slices/api";
+import { labApiTagTypes } from "../../../../tagTypes";
+
+const AddOrEditAddres = ({ isOpen, handleClose, id }) => {
+  const [getAddress, { data: { data: address = [] } = {} }] = useLazyGetQuery();
+
+  const [addAddress, { isLoading: isAdding }] = usePostMutation();
+  const [updateAddress, { isLoading: isEditing }] = usePutMutation();
+
+  const handleGetAddress = async () => {
+    try {
+      await getAddress({
+        endpoint: `/address/get_available_data/${id}`,
+        tags: [labApiTagTypes.ADDRESS],
+      }).unwrap();
+    } catch (error) {}
+  };
+
+  const addressHandler = async (id, values) => {
+    try {
+      const payload = {
+        city: values.city,
+        state: values.state,
+        country: values.country,
+      };
+
+      const configuration = {
+        endpoint: id
+          ? `/address/get_available_data/${id}`
+          : "/address/get_available_data",
+        payload,
+        tags: [labApiTagTypes.ADDRESS],
+        toastify: {
+          message: `Address ${id ? "updated" : "created"} successfully`,
+        },
+      };
+
+      if (id) {
+        await updateAddress(configuration).unwrap();
+      } else {
+        await addAddress(configuration).unwrap();
+      }
+      handleClose();
+      resetForm();
+    } catch (error) {}
+  };
+
+  const { handleSubmit, handleChange, handleBlur, values, touched, errors } =
+    useFormik({
+      enableReinitialize: true,
+      initialValues: {
+        city: address?.city || "",
+        state: address?.state || "",
+        country: address?.country || "",
+      },
+
+      validationSchema: Yup.object({
+        city: Yup.string().nullable(),
+        state: Yup.string().nullable(),
+        country: Yup.object().nullable(),
+      }),
+
+      onSubmit: (values) => addressHandler(id, values),
+    });
+
+  useEffect(() => {
+    if (id) {
+      handleGetAddress();
+    }
+  }, [id]);
+
+  return (
+    <Modal isOpen={isOpen} centered size="md">
+      <ModalHeader className="bg-light p-3" toggle={handleClose}>
+        {`${id ? "Edit" : "Add"} Addess`}
+      </ModalHeader>
+      <Form
+        className="tablelist-form"
+        onSubmit={(e) => {
+          e.preventDefault();
+          handleSubmit();
+          return false;
+        }}
+      >
+        <ModalBody>
+          <Row>
+            <Col className="mb-2" lg={6}>
+              <Label className="mb-0">City</Label>
+              <Input
+                type="text"
+                className="form-control mb-1"
+                placeholder="City"
+                name="city"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.city}
+                invalid={!!(touched.city && errors.city)}
+              />
+            </Col>
+            <Col className="mb-2" lg={6}>
+              <Label className="mb-0">State</Label>
+              <Input
+                type="text"
+                className="form-control mb-1"
+                placeholder="State"
+                name="state"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.state}
+                invalid={!!(touched.state && errors.state)}
+              />
+            </Col>
+            <Col className="mb-2" lg={6}>
+              <Label className="mb-0">Country</Label>
+              <Input
+                type="text"
+                className="form-control mb-1"
+                placeholder="Country"
+                name="country"
+                onChange={handleChange}
+                onBlur={handleBlur}
+                value={values.country}
+                invalid={!!(touched.country && errors.country)}
+              />
+            </Col>
+          </Row>
+        </ModalBody>
+
+        <ModalFooter>
+          <div className="hstack gap-2 justify-content-end">
+            <Button color="light" className="btn" onClick={handleClose}>
+              Close
+            </Button>
+
+            <Button type="submit" color="primary" disabled={isEditing}>
+              {(isEditing || isAdding) && (
+                <Spinner size="sm" className="me-2" />
+              )}
+              {id ? "Update" : "Save"}
+            </Button>
+          </div>
+        </ModalFooter>
+      </Form>
+    </Modal>
+  );
+};
+
+export default AddOrEditAddres;
