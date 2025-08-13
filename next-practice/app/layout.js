@@ -23,22 +23,25 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header style={{ background: "#333", color: "#fff", padding: "10px" }}>
-          {/* <nav style={{ display: "flex", gap: "10px" }}>
-            <Link className="text-gray-800" href="/">
+        <header className="bg-gray-100 text-gray-700 flex justify-between px-20 py-4">
+          <h1>Next.js Dashboard</h1>
+          <nav className="flex gap-8 items-center">
+            <Link className="hover:text-red-800" href="/">
               Home
             </Link>
-            <Link className="text-gray-800" href="/ssr">
+            <Link className="hover:text-red-800" href="/ssr">
               SSR
             </Link>
-            <Link className="text-gray-800" href="/ssg">
+            <Link className="hover:text-red-800" href="/ssg">
               SSG
             </Link>
-            <Link className="text-gray-800" href="/isr">
+            <Link className="hover:text-red-800" href="/isr">
               ISR
             </Link>
-          </nav> */}
-          <h1>Next.js Dashboard</h1>
+            <Link className="hover:text-red-800" href="/mix">
+              MIX
+            </Link>
+          </nav>
         </header>
         <main style={{ padding: "20px" }}>{children}</main>
       </body>

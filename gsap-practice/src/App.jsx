@@ -4,6 +4,7 @@ import gsap from "gsap";
 import BakeryLanding from "./components/BakeryLanding";
 import BasicLevel2 from "./components/BasicLevel2";
 import TheCodeCreative from "./components/TheCodeCreative";
+import TextBasics from "./components/TextBasics";
 
 gsap.registerPlugin(ScrollTrigger, SplitText, TextPlugin, ScrollToPlugin);
 function App() {
@@ -18,7 +19,8 @@ function App() {
       {/* <Cursor /> */}
       {/* <Basic /> */}
       {/* <BasicLevel2 /> */}
-      <TheCodeCreative />
+      {/* <TheCodeCreative /> */}
+      <TextBasics />
     </>
   );
 }
