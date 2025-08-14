@@ -186,3 +186,4 @@ https://codepen.io/mikun/pen/YWgqEX
 // | `<-0.1` | Start **0.1 seconds before** the **previous animation starts** (rare). |
 
 portfolio link: https://github.com/shubh73/devfolio
+nvm use 20.19.0
