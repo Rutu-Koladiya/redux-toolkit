@@ -20,7 +20,9 @@ A complete **CRUD User Management System** built with:
 ## Setup Instructions
 
 ### 1. Clone repo
-<pre> ```bash git clone https://github.com/Rutu-Koladiya/redux-toolkit.git cd redux-toolkit/redux-test ``` </pre>
+```bash
+git clone https://github.com/Rutu-Koladiya/redux-toolkit.git
+cd redux-toolkit/redux-test
 
 ### 2. Install dependencies
 `npm install`
@@ -34,6 +36,7 @@ This will run a fake REST API at http://localhost:3000/user
 `npm run dev`
 
 ## Folder Structure
+<pre>
 redux-test/
 │── src/
 │   ├── app/store.js         # Redux store
@@ -42,6 +45,7 @@ redux-test/
 │   ├── components/UserModal # Formik + Yup modal form
 │   └── hook/useDebounce.js  # Debounced search hook
 │   └── utils/validation.js  # validation schema
+</pre>
 
 ### Tech Stack
 
