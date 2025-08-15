@@ -1,12 +1,54 @@
-# React + Vite
+# Redux Toolkit – User Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A complete **CRUD User Management System** built with:
 
-Currently, two official plugins are available:
+- Redux Toolkit + RTK Query  
+- Ant Design (UI components)  
+- Formik + Yup (form handling + validation)  
+- JSON Server (mock backend)  
+- Debounced search + role filters  
+- React-Toastify (notifications)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- Fetch users (`useGetUsersQuery`)
+- Add / Update / Delete users with mutations
+- Optimistic updates with `invalidatesTags`
+- Search users by name/email (debounced)
+- Filter users by role (Admin / Non-admin)
+- Modal form with validation (Formik + Yup)
 
-## Expanding the ESLint configuration
+## Setup Instructions
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Clone repo
+<pre> ```git clone https://github.com/Rutu-Koladiya/redux-toolkit.git
+cd redux-toolkit/redux-test```</pre>
+
+### 2. Install dependencies
+`npm install`
+
+### 3. Start JSON Server (Mock API)
+`npx json-server --watch db.json --port 3000`
+
+This will run a fake REST API at http://localhost:3000/user
+
+### 4. Start React App
+`npm run dev`
+
+## Folder Structure
+redux-test/
+│── src/
+│   ├── app/store.js         # Redux store
+│   ├── features/users/      # RTK Query userApi
+│   ├── components/UserList  # User list, search, filters
+│   ├── components/UserModal # Formik + Yup modal form
+│   └── hook/useDebounce.js  # Debounced search hook
+│   └── utils/validation.js  # validation schema
+
+### Tech Stack
+
+React
+Redux Toolkit (RTK Query)
+Ant Design
+Formik + Yup
+JSON Server
+React Toastify
