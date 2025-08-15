@@ -23,8 +23,8 @@ A complete **CRUD User Management System** built with:
 ### 1. Clone repo
 
 <pre>
-`git clone https://github.com/Rutu-Koladiya/redux-toolkit.git`
-`cd redux-toolkit/redux-test`
+git clone https://github.com/Rutu-Koladiya/redux-toolkit.git
+cd redux-toolkit/redux-test
 </pre>
 
 ### 2. Install dependencies
