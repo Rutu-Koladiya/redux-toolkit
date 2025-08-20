@@ -187,3 +187,14 @@ https://codepen.io/mikun/pen/YWgqEX
 
 portfolio link: https://github.com/shubh73/devfolio
 nvm use 20.19.0
+
+{
+    "can_show_patient_id": true,
+    "can_show_patient_type": true,
+    "can_show_invoice_no": true,
+    "can_show_registered_on": true,
+    "can_show_received_on": true,
+    "can_show_reported_on": true,
+    "can_show_collection_center": true,
+    "can_show_accountant_accept": false
+}
