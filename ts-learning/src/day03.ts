@@ -9,8 +9,6 @@
 
 // 3. Create a function `logStatus(status: "online" | "offline" | "busy")` that logs a custom message.
 
-// ---
-
 function calculateArea(shape: "circle" | "square", value: number): number {
   if (shape === "circle") {
     return 3.14 * (value * value);
@@ -20,12 +18,10 @@ function calculateArea(shape: "circle" | "square", value: number): number {
 }
 
 console.log(calculateArea("circle", 2));
-
 interface Car {
   type: "car";
   speed: number;
 }
-
 interface Bike {
   type: "bike";
   cc: number;
@@ -58,8 +54,6 @@ function logStatus(status: "online" | "offline" | "busy") {
 
 logStatus("offline");
 
-// ## 📌 Mini Assignment (EOD – Day 3)
-
 // Model a **Banking System**:
 
 // 1. `Account` type: `{ id, ownerName, balance }`
@@ -70,13 +64,31 @@ logStatus("offline");
 //    * If withdraw → subtract (only if sufficient funds).
 //    * Return updated account.
 
-// 👉 Example:
+type Account = {
+  id: number;
+  ownerName: string;
+  balance: number;
+};
 
-// ```ts
-// let acc: Account = { id: 1, ownerName: "Rutu", balance: 1000 };
-// console.log(performTransaction(acc, "withdraw", 500));
-// // Output: { id: 1, ownerName: "Rutu", balance: 500 }
+type TransactionType = "deposit" | "withdraw";
 
-// ⚡ Tomorrow (Day 4) we’ll unlock **Generics** — the real power tool that makes TypeScript shine in **React components & APIs**.
+function performTransaction(
+  account: Account,
+  type: TransactionType,
+  amount: number
+) {
+  if (type === "deposit") {
+    account.balance += amount;
+  } else {
+    if (amount <= account.balance) {
+      account.balance -= amount;
+    } else {
+      console.log("Insufficient funds! Transaction cancelled.");
+    }
+  }
+  return account;
+}
 
-// Do you want me to also show you **how unions + narrowing help when typing API responses** (like when some fields are optional or vary by response type)?
+let acc: Account = { id: 1, ownerName: "Rutu", balance: 1000 };
+console.log(performTransaction(acc, "withdraw", 1600));
+// Output: { id: 1, ownerName: "Rutu", balance: 500 }

@@ -90,3 +90,6 @@ Given your ambitious roadmap, you’ll need a robust tech stack that can scale f
 This project has so much potential! If you start with an MVP focusing on simplicity, real-time categorization, and easy-to-understand insights, you’ll quickly gain traction. Then, building on that with gamification, family collaboration, and financial health advice will keep users engaged and give you a way to monetize over time.
 
 Let me know if you want help with any specific part, like UI design, further tech suggestions, or user acquisition strategies!
+
+https://dribbble.com/shots/18066193-Fintt-te-Landing-Page-Design
+https://dribbble.com/shots/25740738-Savi-Goals-Page-Financial-Dashboard
