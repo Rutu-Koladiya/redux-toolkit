@@ -1,5 +1,11 @@
+import HerSection from "@/components/HerSection";
+import ServiceSection from "@/components/ServiceSection";
+
 export default function Home() {
   return (
-    <h1>Real Estate landing page</h1>
+    <div>
+      <HerSection />
+      <ServiceSection />
+    </div>
   );
 }

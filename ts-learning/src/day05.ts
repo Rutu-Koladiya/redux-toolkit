@@ -8,11 +8,8 @@
 
 // 👉 Think of generics like creating a *function/class blueprint* that can work with any type, but still enforces consistency.
 
-// ---
-
 // ## 1. Basic Example – Generic Function
 
-// ```ts
 // function identity<T>(value: T): T {
 //   return value;
 // }
@@ -31,34 +28,25 @@
 // * use `any` (lose type safety), or
 // * write separate functions for each type (duplicate code).
 
-// ---
-
 // ## 2. Generics with Arrays
 
-// ```ts
 // function getFirstElement<T>(arr: T[]): T {
 //   return arr[0];
 // }
 
 // console.log(getFirstElement<number>([10, 20, 30])); // 10
 // console.log(getFirstElement<string>(["Rutu", "TS"])); // "Rutu"
-// ```
 
 // ⚡ Notice:
 
 // * TypeScript **infers** the type automatically:
 
-// ```ts
 // console.log(getFirstElement(["A", "B", "C"])); // Works without <string>
-// ```
-
-// ---
 
 // ## 3. Generics with Constraints (`extends`)
 
 // What if we want to ensure a generic type has certain properties?
 
-// ```ts
 // interface HasLength {
 //   length: number;
 // }
@@ -70,9 +58,6 @@
 // logLength("Hello");     // ✅ string has length
 // logLength([1, 2, 3]);   // ✅ array has length
 // // logLength(123);      ❌ number doesn’t have length
-// ```
-
-// ---
 
 // ## 4. Real World Example – Student Database
 
@@ -96,7 +81,7 @@ const students: Student[] = [
   { id: 2, name: "Alex", marks: [85, 79, 82] },
 ];
 
-console.log(findById(students, 1)); // { id: 1, name: "Rutu", marks: [...] }
+console.log(findById(students, 2)); // { id: 1, name: "Rutu", marks: [...] }
 
 // * Generic `<T>` makes `findById` reusable for *any object type with `id: number`* (not just `Student`).
 // * You could use the same for `Teacher[]`, `Course[]`, etc.
@@ -133,8 +118,7 @@ console.log(findById(students, 1)); // { id: 1, name: "Rutu", marks: [...] }
 //    * `getAll(): T[]`
 
 function getTopStudent<T extends { marks: number[] }>(
-  list: T[],
-  id: number
+  list: T[]
 ): T | undefined {
   let maxAvg = -Infinity;
   let topStudent: T | undefined;
@@ -146,13 +130,15 @@ function getTopStudent<T extends { marks: number[] }>(
       topStudent = item;
     }
   }
-  return topStudent
+  return topStudent;
 }
 
 const student1: Student[] = [
   { id: 1, name: "Rutu", marks: [98, 94, 96] },
   { id: 2, name: "Alex", marks: [85, 79, 82] },
 ];
+
+console.log(getTopStudent(student1));
 
 // ## 🏫 What is a Class?
 
@@ -164,52 +150,38 @@ const student1: Student[] = [
 // 👉 Example:
 // A `Student` class = blueprint for making many students.
 
-// ---
+class Students {
+  id: number;
+  name: string;
+  marks: number[];
 
-// ## 📦 Breaking Down a Class
+  constructor(id: number, name: string, marks: number[]) {
+    this.id = id; // this = the object being created
+    this.name = name;
+    this.marks = marks;
+  }
 
-// ```ts
-// class Student {
-//   id: number;
-//   name: string;
-//   marks: number[];
+  // Method: behavior of the student
+  calculateAverage(): number {
+    return this.marks.reduce((acc, m) => acc + m, 0) / this.marks.length;
+  }
 
-//   constructor(id: number, name: string, marks: number[]) {
-//     this.id = id;       // this = the object being created
-//     this.name = name;
-//     this.marks = marks;
-//   }
+  getGrade(): string {
+    const avg = this.calculateAverage();
+    if (avg >= 90) return "A";
+    if (avg >= 75) return "B";
+    return "C";
+  }
+}
 
-//   // Method: behavior of the student
-//   calculateAverage(): number {
-//     return this.marks.reduce((acc, m) => acc + m, 0) / this.marks.length;
-//   }
+const rutu = new Students(1, "Rutu", [98, 94, 96]);
+const alex = new Students(2, "Alex", [85, 79, 82]);
 
-//   getGrade(): string {
-//     const avg = this.calculateAverage();
-//     if (avg >= 90) return "A";
-//     if (avg >= 75) return "B";
-//     return "C";
-//   }
-// }
-// ```
+console.log(rutu.calculateAverage()); // 96
+console.log(rutu.getGrade()); // "A"
 
-// ---
-
-// ## 🧑‍🎓 Using the Class
-
-// ```ts
-// const rutu = new Student(1, "Rutu", [98, 94, 96]);
-// const alex = new Student(2, "Alex", [85, 79, 82]);
-
-// console.log(rutu.calculateAverage()); // 96
-// console.log(rutu.getGrade());         // "A"
-
-// console.log(alex.calculateAverage()); // 82
-// console.log(alex.getGrade());         // "B"
-// ```
-
-// ---
+console.log(alex.calculateAverage()); // 82
+console.log(alex.getGrade()); // "B"
 
 // ## ⚡ Why Classes?
 
@@ -225,18 +197,42 @@ const student1: Student[] = [
 // * **Car (object)** = Actual car built from that plan.
 // * **Methods (functions inside class)** = Actions the car can perform (drive, brake, honk).
 
-// ---
-
-// ## 📝 Small Task for You
-
 // Write a **`Car` class** with:
 
 // * properties: `brand`, `model`, `year`, `mileage`
 // * method: `drive(km: number)` → increases mileage
 // * method: `getDetails()` → returns string like `"Tesla Model 3 (2023), Mileage: 10000km"`
 
-// ---
+class Car {
+  brand: string;
+  model: string | number;
+  year: number;
+  mileage: number;
+  launchDate?: string | undefined;
 
-// 👉 Once you write it, I’ll help you refactor and add **TypeScript power-ups** like `private`, `readonly`, and `inheritance`.
+  constructor(
+    brand: string,
+    model: string | number,
+    year: number,
+    mileage: number,
+    launchDate?: string
+  ) {
+    this.brand = brand;
+    this.model = model;
+    this.year = year;
+    this.mileage = mileage;
+    this.launchDate = launchDate;
+  }
 
-// Do you want me to **first show the `Car` example solved** (like a demo), or do you want to **try first and then I’ll fix it**?
+  drive(km: number) {
+    return (this.mileage += km);
+  }
+
+  getDetails() {
+    return `${this.brand} ${this.model} (${this.year}) ${this.mileage}`;
+  }
+}
+const myCar = new Car("Tesla", "Model YL", 2028, 300);
+
+console.log(myCar.drive(60));
+console.log(myCar.getDetails());
