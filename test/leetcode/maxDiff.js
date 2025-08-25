@@ -7,18 +7,20 @@ const maxDiff = (arr) => {
   for (let i = 0; i < arr.length; i++) {
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[j] - arr[i] > maxDiff) {
-        maxDiff = arr[j] - a[i];
+        maxDiff = arr[j] - arr[i];
       }
     }
   }
-  return maxDiff;
+  return maxDiff === 0 ? "-1" : maxDiff;
 };
 
 const nums = [7, 1, 5, 4];
 
 console.log(maxDiff(nums));
+console.log(maxDiff([9, 4, 3, 2]));
+console.log(maxDiff([1, 5, 2, 10]));
 
-console.log(18 + 20 /2);
+console.log(18 + 20 / 2);
 
 // Example 1:
 

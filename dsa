@@ -1,0 +1,52 @@
+## 📚 Roadmap (Layer by Layer)
+
+### 1. **Strings**
+
+- Theory + Tricks:
+
+  - String immutable hota hai (JS mein new string banti hai har change ke saath).
+  - Important methods:
+    `length, indexOf, includes, slice, substring, substr, split, join, toUpperCase, toLowerCase, trim, replace, repeat`
+  - Iteration methods:
+    `for…of`, `for…in`, `charAt(i)`, `str[i]`
+  - Pattern tricks:
+
+    - Sliding Window (substrings / unique chars problems)
+    - Two pointers (palindrome, reverse words, etc.)
+    - HashMap (frequency count, anagrams)
+
+### 2. **Arrays**
+
+- Theory + Tricks:
+
+  - Important methods:
+    `push, pop, shift, unshift, slice, splice, indexOf, includes, concat, join, map, filter, reduce, find, some, every, sort, reverse`
+  - Patterns:
+
+    - Two Pointers (sorted arrays, pair sum problems)
+    - Sliding Window (subarray sum, max subarray, etc.)
+    - Hashing / Set (duplicate detection, frequency count)
+    - Prefix Sum (range sum queries, subarray sum problems)
+
+### 3. **Objects**
+
+- Theory + Tricks:
+
+  - Objects as HashMap → Key-Value storage
+  - Methods:
+    `Object.keys(obj), Object.values(obj), Object.entries(obj)`
+  - Patterns:
+
+    - Frequency counter
+    - Grouping
+    - Mapping elements (like "char → index")
+
+### 4. **Map / Set**
+
+- **Set** → Unique elements
+
+  - Use cases: duplicate check, unique elements, sliding window with uniqueness.
+
+- **Map** → Key-Value pairs (ordered, supports any type as key).
+
+  - Use cases: frequency map, char → index mapping, adjacency lists.

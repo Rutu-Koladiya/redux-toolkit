@@ -1,0 +1,96 @@
+- Important methods:
+    `length, indexOf, includes, slice, substring, substr, split, join, toUpperCase, toLowerCase, trim, replace, repeat`
+- Iteration methods:
+    `for…of`, `for…in`, `charAt(i)`, `str[i]`
+
+Part 1: String Basics (JS Specific)
+
+A string is an immutable sequence of characters.
+In JavaScript:
+
+  let str = "hello";
+  str[0] = "H"; // does nothing (strings are immutable)
+  str = "Hello"; // new string is created
+
+Important takeaway: **you can’t change characters in place, only create new strings.**
+
+
+Part 2: Most Used String Methods in Problem Solving
+
+### Accessing and Checking
+
+* `str.length` → number of characters
+* `str[i]` → get char at index
+* `str.charAt(i)` → same as above
+* `str.includes(sub)` → check substring
+* `str.indexOf(sub)` / `str.lastIndexOf(sub)` → first/last occurrence index
+
+### Transformations
+
+* `str.toLowerCase() / str.toUpperCase()` → case handling
+* `str.trim()` → remove spaces at start/end
+* `str.replace("a","b")` → replace first
+* `str.replaceAll("a","b")` → replace all
+
+### Splitting & Joining
+
+* `str.split(" ")` → string → array
+* `arr.join(" ")` → array → string
+
+### Slicing
+
+* `str.slice(start, end)` → substring
+* `str.substring(start, end)` → same but no negative indexes
+
+### Useful extras
+
+* `str.repeat(n)` → repeat string
+* `str.reverse()` doesn’t exist → need `str.split("").reverse().join("")`
+
+---
+
+## 🔹 Part 3: Tips & Tricks for Problem Solving
+
+1. Frequency Counting
+   Use object or Map:
+
+   let freq = {};
+   for (let ch of str) {
+     freq[ch] = (freq[ch] || 0) + 1;
+   }
+
+2. Palindrome Check
+
+   function isPalindrome(s) {
+     let rev = s.split("").reverse().join("");
+     return s === rev;
+   }
+
+3. Two-Pointer Pattern
+   Useful for substrings, palindromes, removing chars:
+
+   let l = 0, r = str.length - 1;
+   while (l < r) {
+     if (str[l] !== str[r]) return false;
+     l++; r--;
+   }
+   return true;
+
+4. Sliding Window (longest substring, substrings with condition)
+
+   * Keep a window (`left`, `right`)
+   * Expand `right` → check condition
+   * Shrink `left` if condition breaks
+
+
+Part 4: Must-Solve Problem Patterns (Strings)
+
+1. Count characters (frequency map)
+2. Reverse string / words
+3. Palindrome check
+4. Anagram check
+5. Longest substring without repeating chars (sliding window)
+6. Longest palindrome substring
+7. Substring search (indexOf / KMP)
+8. Count vowels/consonants
+

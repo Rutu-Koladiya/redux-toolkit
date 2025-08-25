@@ -3,8 +3,8 @@ import { HoverEffect } from "./ui/card-hover-effect";
 
 const ServiceSection = () => {
   return (
-    <div className=" bg-black/[0.96] mx-auto px-6 text-center h-screen">
-      <h2 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-2xl font-bold text-transparent lg:text-4xl xl:text-5xl">
+    <div className="bg-black/[0.96] mx-auto md:px-6 pt-18 md:pt-0 text-center">
+      <h2 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-3xl font-bold text-transparent lg:text-4xl xl:text-5xl">
         Our Services
       </h2>
       <p className="mx-auto mt-4 max-w-xl text-center text-base font-normal text-neutral-300">

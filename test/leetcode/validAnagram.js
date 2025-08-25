@@ -57,10 +57,9 @@ const isValids = (s, t) => {
     map.set(char, map.get(char) - 1);
   }
 
-  return true
+  return true;
 };
 
 console.log(isValids("anagram", "nagaram"));
 console.log(isValids("rat", "car"));
 console.log(isValids("rutu", "turu"));
-

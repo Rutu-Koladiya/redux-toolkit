@@ -21,6 +21,34 @@ const Navbar = ({ className }: { className?: string }) => {
         <Link href={"/"}>
           <MenuItem setActive={setActive} active={active} item="Home" />
         </Link>
+        <MenuItem setActive={setActive} active={active} item="Properties">
+          <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
+            <ProductItem
+              title="For Rent"
+              href="/for-rent"
+              src={forRent}
+              description="Find budget-friendly rentals, family apartments, and pool homes for every lifestyle."
+            />
+            <ProductItem
+              title="Luxury Homes"
+              href="/luxury-homes"
+              src={luxuryHomes}
+              description="Discover exclusive villas, penthouses, and high-end residences for modern living."
+            />
+            <ProductItem
+              title="Commercial Properties"
+              href="/commercial"
+              src={commercial}
+              description="Lease or buy offices, retail shops, and premium commercial spaces."
+            />
+            <ProductItem
+              title="New Projects"
+              href="/new-projects"
+              src={newProject}
+              description="Explore upcoming developments, gated communities, and modern housing projects."
+            />
+          </div>
+        </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
             <HoveredLink href="/buy-property">
@@ -32,40 +60,10 @@ const Navbar = ({ className }: { className?: string }) => {
             <HoveredLink href="/manage-propery">
               Property Management
             </HoveredLink>
-            <HoveredLink href="/loans">
-              Home Loans / Financing Help
-            </HoveredLink>
+            <HoveredLink href="/loans">Home Loans / Financing Help</HoveredLink>
             <HoveredLink href="/legal-documntation">
               Legal & Documentation
             </HoveredLink>
-          </div>
-        </MenuItem>
-        <MenuItem setActive={setActive} active={active} item="Properties">
-          <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
-            <ProductItem
-              title="For Rent"
-              href="/for-rent"
-              src={forRent}
-              description="Spacious rental homes with private pools."
-            />
-            <ProductItem
-              title="Luxury Homes"
-              href="/luxury-homes"
-              src={luxuryHomes}
-              description="Premium villas & luxury residences for sale."
-            />
-            <ProductItem
-              title="Commercial Properties"
-              href="/commercial"
-              src={commercial}
-              description="Offices, shops & commercial spaces to lease."
-            />
-            <ProductItem
-              title="New Projects"
-              href="/new-projects"
-              src={newProject}
-              description="Explore latest upcoming real estate developments."
-            />
           </div>
         </MenuItem>
         <Link href={"/contact-us"}>

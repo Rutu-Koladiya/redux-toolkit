@@ -1,0 +1,40 @@
+{
+  "properties": [
+    {
+      "id": 1,
+      "title": "For Rent",
+      "imageKey": "forRent",
+      "description": "Spacious rental homes with private pools and modern amenities.",
+      "highlights": ["Starting $1,200/mo", "Pool", "2-4 BHK"],
+      "link": "/for-rent",
+      "cta": "View Listings"
+    },
+    {
+      "id": 2,
+      "title": "Luxury Homes",
+      "imageKey": "luxury",
+      "description": "Premium villas & luxury residences for an elite lifestyle.",
+      "highlights": ["Sea View", "Smart Homes", "Private Garden"],
+      "link": "/luxury-homes",
+      "cta": "Explore Luxury"
+    },
+    {
+      "id": 3,
+      "title": "Commercial Properties",
+      "imageKey": "commercial",
+      "description": "Find the perfect office, shop, or co-working space for your business.",
+      "highlights": ["Offices", "Shops", "Prime Location"],
+      "link": "/commercial",
+      "cta": "Find Commercial"
+    },
+    {
+      "id": 4,
+      "title": "New Projects",
+      "imageKey": "newProjects",
+      "description": "Explore upcoming real estate developments with modern architecture.",
+      "highlights": ["Ongoing", "Possession 2026", "EMI Opt."],
+      "link": "/new-projects",
+      "cta": "See Projects"
+    }
+  ]
+}

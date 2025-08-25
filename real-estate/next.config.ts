@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
-   images: {
-    domains: ["cpjlcwamma.cloudimg.io"], // 👈 Add this domain
+  images: {
+    domains: ["cpjlcwamma.cloudimg.io", "images.unsplash.com"],
   },
 };
 

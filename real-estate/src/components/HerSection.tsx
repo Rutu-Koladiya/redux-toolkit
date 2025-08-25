@@ -5,12 +5,11 @@ import { Button } from "./ui/moving-border";
 
 const HerSection = () => {
   return (
-    <div className="relative flex h-[72rem] md:h-[42rem] xl:h-[47rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
+    <div className="relative flex h-[30rem] md:h-[42rem] xl:h-[47rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased justify-start md:items-center md:justify-center">
       <Spotlight
         className="-top-40 left-0 md:-top-20 md:left-60"
-        fill="white"
       />
-      <div className="flex flex-col items-center justify-center mt-44 md:mt-16">
+      <div className="flex flex-col items-center justify-center mt-38 md:mt-16">
         <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-4xl font-bold text-transparent lg:text-6xl xl:text-7xl">
           Find Your Dream Home Today
         </h1>

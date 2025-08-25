@@ -1,0 +1,114 @@
+{
+  "propertieDetails": [
+    {
+      "id": 1,
+      "title": "Luxury Villa with Private Pool",
+      "slug": "luxury-villa-private-pool",
+      "description": "A stunning 5BHK villa with modern interiors, private pool, and garden area in a prime location.",
+      "price": 750000,
+      "location": "Beverly Hills, CA",
+      "type": "Luxury Home",
+      "isFeatured": true,
+      "image": "/properties/luxury-villa.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Downtown Modern Apartment",
+      "slug": "downtown-modern-apartment",
+      "description": "2BHK fully furnished apartment located in the city center, perfect for working professionals.",
+      "price": 2500,
+      "location": "New York, NY",
+      "type": "For Rent",
+      "isFeatured": true,
+      "image": "/properties/downtown-apartment.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Beachfront Penthouse",
+      "slug": "beachfront-penthouse",
+      "description": "Exclusive penthouse with panoramic ocean views, private terrace, and luxury amenities.",
+      "price": 1200000,
+      "location": "Miami, FL",
+      "type": "Luxury Home",
+      "isFeatured": true,
+      "image": "/properties/beachfront-penthouse.jpg"
+    },
+    {
+      "id": 4,
+      "title": "Corporate Office Space",
+      "slug": "corporate-office-space",
+      "description": "Spacious commercial office space with high-speed internet, parking, and 24/7 security.",
+      "price": 15000,
+      "location": "San Francisco, CA",
+      "type": "Commercial",
+      "isFeatured": false,
+      "image": "/properties/office-space.jpg"
+    },
+    {
+      "id": 5,
+      "title": "Upcoming Smart City Apartments",
+      "slug": "upcoming-smart-city-apartments",
+      "description": "Affordable 1BHK & 2BHK apartments in a new smart city development project.",
+      "price": 85000,
+      "location": "Austin, TX",
+      "type": "New Project",
+      "isFeatured": true,
+      "image": "/properties/smart-city-apartment.jpg"
+    },
+    {
+      "id": 6,
+      "title": "Suburban Family House",
+      "slug": "suburban-family-house",
+      "description": "3BHK independent house in a quiet neighborhood with backyard and garage.",
+      "price": 350000,
+      "location": "Dallas, TX",
+      "type": "For Sale",
+      "isFeatured": false,
+      "image": "/properties/family-house.jpg"
+    },
+    {
+      "id": 7,
+      "title": "Retail Shop Space",
+      "slug": "retail-shop-space",
+      "description": "Prime retail store space in a busy shopping district with heavy footfall.",
+      "price": 6000,
+      "location": "Chicago, IL",
+      "type": "Commercial",
+      "isFeatured": false,
+      "image": "/properties/retail-shop.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Luxury High-Rise Condo",
+      "slug": "luxury-high-rise-condo",
+      "description": "Modern 2BHK condo in a luxury high-rise building with gym and rooftop pool.",
+      "price": 480000,
+      "location": "Los Angeles, CA",
+      "type": "Luxury Home",
+      "isFeatured": true,
+      "image": "/properties/high-rise-condo.jpg"
+    },
+    {
+      "id": 9,
+      "title": "Student-Friendly Apartment",
+      "slug": "student-friendly-apartment",
+      "description": "Affordable 1BHK apartment close to the university, fully furnished with WiFi included.",
+      "price": 1200,
+      "location": "Boston, MA",
+      "type": "For Rent",
+      "isFeatured": false,
+      "image": "/properties/student-apartment.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Green Living Eco Villas",
+      "slug": "green-living-eco-villas",
+      "description": "Sustainable villas with solar energy, rainwater harvesting, and eco-friendly materials.",
+      "price": 560000,
+      "location": "Seattle, WA",
+      "type": "New Project",
+      "isFeatured": true,
+      "image": "/properties/eco-villas.jpg"
+    }
+  ]
+}
