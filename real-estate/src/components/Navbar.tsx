@@ -25,25 +25,25 @@ const Navbar = ({ className }: { className?: string }) => {
           <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
             <ProductItem
               title="For Rent"
-              href="/for-rent"
+              href="/properties/for-rent"
               src={forRent}
               description="Find budget-friendly rentals, family apartments, and pool homes for every lifestyle."
             />
             <ProductItem
               title="Luxury Homes"
-              href="/luxury-homes"
+              href="/properties/luxury-homes"
               src={luxuryHomes}
               description="Discover exclusive villas, penthouses, and high-end residences for modern living."
             />
             <ProductItem
               title="Commercial Properties"
-              href="/commercial"
+              href="/properties/commercial-properties"
               src={commercial}
               description="Lease or buy offices, retail shops, and premium commercial spaces."
             />
             <ProductItem
               title="New Projects"
-              href="/new-projects"
+              href="/properties/new-projects"
               src={newProject}
               description="Explore upcoming developments, gated communities, and modern housing projects."
             />

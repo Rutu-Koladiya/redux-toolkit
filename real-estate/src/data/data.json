@@ -1,0 +1,225 @@
+{
+  "propertieDetails": [
+    {
+      "id": 1,
+      "title": "2BHK Cozy Apartment",
+      "type": "for-rent",
+      "price": "₹15,000/month",
+      "location": "Ahmedabad, Gujarat",
+      "description": "Budget-friendly 2BHK with modern amenities, ideal for small families.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 2,
+      "title": "1BHK Studio Apartment",
+      "type": "for-rent",
+      "price": "₹9,000/month",
+      "location": "Pune, Maharashtra",
+      "description": "Compact studio for students & professionals, located near IT hub.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 3,
+      "title": "3BHK Family Apartment",
+      "type": "for-rent",
+      "price": "₹22,000/month",
+      "location": "Bangalore, Karnataka",
+      "description": "Spacious gated community apartment with clubhouse, pool & gym.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 4,
+      "title": "Furnished PG Rooms",
+      "type": "for-rent",
+      "price": "₹7,500/month",
+      "location": "Hyderabad, Telangana",
+      "description": "Shared PG rooms with WiFi, food service & daily housekeeping.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 5,
+      "title": "Luxury Service Apartment",
+      "type": "for-rent",
+      "price": "₹35,000/month",
+      "location": "Mumbai, Maharashtra",
+      "description": "Fully furnished serviced apartment with sea view & daily concierge.",
+      "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-2"
+    },
+
+    {
+      "id": 6,
+      "title": "Beachside Villa",
+      "type": "luxury-homes",
+      "price": "₹4.5 Cr",
+      "location": "Goa, India",
+      "description": "Private villa with pool, beachfront view & premium interiors.",
+      "image": "https://images.unsplash.com/photo-1600585153937-9a08419b9625?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 7,
+      "title": "Heritage Palace Mansion",
+      "type": "luxury-homes",
+      "price": "₹12 Cr",
+      "location": "Jaipur, Rajasthan",
+      "description": "Traditional Rajasthani palace mansion with lush gardens.",
+      "image": "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200&auto=format&fit=crop",
+      "status": "Sold",
+      "className": "md:col-span-2"
+    },
+    {
+      "id": 8,
+      "title": "Penthouse with City View",
+      "type": "luxury-homes",
+      "price": "₹3.2 Cr",
+      "location": "Delhi, India",
+      "description": "Stylish penthouse with rooftop terrace & skyline view.",
+      "image": "https://images.unsplash.com/photo-1600047509807-410a5f16f3a4?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 9,
+      "title": "Luxury Hilltop Bungalow",
+      "type": "luxury-homes",
+      "price": "₹5 Cr",
+      "location": "Lonavala, Maharashtra",
+      "description": "Modern hilltop villa with infinity pool & valley view.",
+      "image": "https://images.unsplash.com/photo-1600047508941-67aa6d2b60dd?w=1200&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-2"
+    },
+    {
+      "id": 10,
+      "title": "Ultra-Modern Glass House",
+      "type": "luxury-homes",
+      "price": "₹8.5 Cr",
+      "location": "Bangalore, Karnataka",
+      "description": "Minimalist design home with floor-to-ceiling glass walls.",
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 11,
+      "title": "Corporate Office Space",
+      "type": "commercial",
+      "price": "₹1.2 L/month",
+      "location": "Bangalore, Karnataka",
+      "description": "Premium office space in IT park, ideal for enterprises.",
+      "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 12,
+      "title": "Retail Shop in Mall",
+      "type": "commercial",
+      "price": "₹65 L",
+      "location": "Mumbai, Maharashtra",
+      "description": "Prime retail unit in high-footfall shopping mall.",
+      "image": "https://images.unsplash.com/photo-1591244460352-1f2e3e6f91c4?w=900&auto=format&fit=crop",
+      "status": "Sold",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 13,
+      "title": "Co-Working Hub",
+      "type": "commercial",
+      "price": "₹80,000/month",
+      "location": "Hyderabad, Telangana",
+      "description": "Shared coworking hub for freelancers & startups.",
+      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 14,
+      "title": "IT Park Office Floor",
+      "type": "commercial",
+      "price": "₹2.5 Cr",
+      "location": "Gurgaon, Haryana",
+      "description": "Full office floor with 100+ seating, cafeteria & parking.",
+      "image": "https://images.unsplash.com/photo-1507209696998-3c532be9b2b1?w=1200&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-2"
+    },
+    {
+      "id": 15,
+      "title": "Warehouse Facility",
+      "type": "commercial",
+      "price": "₹1.1 Cr",
+      "location": "Chennai, Tamil Nadu",
+      "description": "Large warehouse suitable for logistics & e-commerce.",
+      "image": "https://images.unsplash.com/photo-1600585154164-47683b3d2df0?w=900&auto=format&fit=crop",
+      "status": "Available",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 16,
+      "title": "Skyline Residency",
+      "type": "new-projects",
+      "price": "₹75 L onwards",
+      "location": "Pune, Maharashtra",
+      "description": "Gated community with modern 2 & 3BHK flats, possession 2026.",
+      "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&auto=format&fit=crop",
+      "status": "Coming Soon",
+      "className": "md:col-span-2"
+    },
+    {
+      "id": 17,
+      "title": "Smart City Villas",
+      "type": "new-projects",
+      "price": "₹1.5 Cr onwards",
+      "location": "Hyderabad, Telangana",
+      "description": "Premium villas in a futuristic township.",
+      "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?w=900&auto=format&fit=crop",
+      "status": "Pre-Launch",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 18,
+      "title": "Emerald Towers",
+      "type": "new-projects",
+      "price": "₹95 L onwards",
+      "location": "Chennai, Tamil Nadu",
+      "description": "High-rise apartments with sea-facing views.",
+      "image": "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=900&auto=format&fit=crop",
+      "status": "Coming Soon",
+      "className": "md:col-span-1"
+    },
+    {
+      "id": 19,
+      "title": "Green Valley Residency",
+      "type": "new-projects",
+      "price": "₹60 L onwards",
+      "location": "Nagpur, Maharashtra",
+      "description": "Affordable homes surrounded by greenery & parks.",
+      "image": "https://images.unsplash.com/photo-1600047508941-67aa6d2b60dd?w=1200&auto=format&fit=crop&q=80",
+      "status": "Under Construction",
+      "className": "md:col-span-2"
+    },
+    {
+      "id": 20,
+      "title": "Metro Heights",
+      "type": "new-projects",
+      "price": "₹1.2 Cr onwards",
+      "location": "Delhi, India",
+      "description": "Luxury high-rise project with metro connectivity.",
+      "image": "https://images.unsplash.com/photo-1502672023488-70e25813eb80?w=900&auto=format&fit=crop",
+      "status": "Pre-Launch",
+      "className": "md:col-span-1"
+    }
+  ]
+}
