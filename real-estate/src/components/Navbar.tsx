@@ -51,22 +51,24 @@ const Navbar = ({ className }: { className?: string }) => {
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Services">
           <div className="flex flex-col space-y-4 text-sm">
-            <HoveredLink href="/buy-property">
+            <HoveredLink href="/services/buy-property">
               Property Buying Assistance
             </HoveredLink>
-            <HoveredLink href="/sell-property">
+            <HoveredLink href="/services/sell-property">
               Property Selling Assistance
             </HoveredLink>
-            <HoveredLink href="/manage-propery">
+            <HoveredLink href="/services/manage-property">
               Property Management
             </HoveredLink>
-            <HoveredLink href="/loans">Home Loans / Financing Help</HoveredLink>
-            <HoveredLink href="/legal-documntation">
+            <HoveredLink href="/services/loans">
+              Home Loans / Financing Help
+            </HoveredLink>
+            <HoveredLink href="/services/legal-documentation">
               Legal & Documentation
             </HoveredLink>
           </div>
         </MenuItem>
-        <Link href={"/contact-us"}>
+        <Link href="/contact-us">
           <MenuItem setActive={setActive} active={active} item="Contact Us" />
         </Link>
       </Menu>

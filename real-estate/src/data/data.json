@@ -175,7 +175,7 @@
       "description": "Gated community with modern 2 & 3BHK flats, possession 2026.",
       "image": "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&auto=format&fit=crop",
       "status": "Coming Soon",
-      "className": "md:col-span-2"
+      "className": "md:col-span-1"
     },
     {
       "id": 17,
@@ -186,7 +186,7 @@
       "description": "Premium villas in a futuristic township.",
       "image": "https://images.unsplash.com/photo-1494526585095-c41746248156?w=900&auto=format&fit=crop",
       "status": "Pre-Launch",
-      "className": "md:col-span-1"
+      "className": "md:col-span-2"
     },
     {
       "id": 18,
@@ -208,7 +208,7 @@
       "description": "Affordable homes surrounded by greenery & parks.",
       "image": "https://images.unsplash.com/photo-1600047508941-67aa6d2b60dd?w=1200&auto=format&fit=crop&q=80",
       "status": "Under Construction",
-      "className": "md:col-span-2"
+      "className": "md:col-span-1"
     },
     {
       "id": 20,

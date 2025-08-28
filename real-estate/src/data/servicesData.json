@@ -1,0 +1,52 @@
+{
+  "buy-property": {
+    "title": "Property Buying Assistance",
+    "description": "Experience white-glove property buying with our expert guidance. From curated listings to luxury site visits, we ensure every step is seamless.",
+    "features": [
+      "Exclusive access to premium listings",
+      "Negotiation handled by experts",
+      "End-to-end property discovery support"
+    ],
+    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop&q=80"
+  },
+  "sell-property": {
+    "title": "Property Selling Assistance",
+    "description": "Sell your property at the best market value with luxury positioning, premium staging, and curated buyer networks.",
+    "features": [
+      "Professional property staging",
+      "Targeted luxury buyer outreach",
+      "Comprehensive valuation reports"
+    ],
+    "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1200&auto=format&fit=crop&q=80"
+  },
+  "manage-property": {
+    "title": "Property Management",
+    "description": "We manage your properties with utmost care — ensuring maximum returns, security, and hassle-free ownership.",
+    "features": [
+      "24/7 concierge management",
+      "Tenant screening & rent collection",
+      "Luxury upkeep & maintenance"
+    ],
+    "image": "https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&auto=format&fit=crop&q=80"
+  },
+  "loans": {
+    "title": "Home Loans & Financing Help",
+    "description": "Unlock financing tailored for luxury buyers and investors. We partner with premium financial institutions.",
+    "features": [
+      "Personalized financing guidance",
+      "Connections with trusted lenders",
+      "Transparent loan processing"
+    ],
+    "image": "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=1200&auto=format&fit=crop&q=80"
+  },
+  "legal-documentation": {
+    "title": "Legal & Documentation",
+    "description": "Our in-house legal team ensures every transaction is secure, compliant, and hassle-free.",
+    "features": [
+      "Title verification & compliance",
+      "Drafting & reviewing agreements",
+      "End-to-end documentation support"
+    ],
+    "image": "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1200&auto=format&fit=crop&q=80"
+  }
+}

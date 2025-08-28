@@ -5,8 +5,8 @@ import data from "@/data/data.json";
 import Image from "next/image";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { cn } from "@/utils/cn";
-import { it } from "node:test";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";
+import { notFound } from "next/navigation";
 
 interface Property {
   id: number;
@@ -45,7 +45,7 @@ const PropertyCategory = ({
 }) => {
   const { category } = use(params);
 
-  if (!category) return <p>Loading...</p>;
+  if (!category) return notFound();
 
   const properties = (data.propertieDetails as Property[]).filter(
     (property) => property.type === category
