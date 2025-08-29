@@ -25,15 +25,15 @@ export default function ServicePage({
   if (!data) return notFound();
 
   return (
-    <div className="relative bg-gradient-to-b from-zinc-950 to-black text-white">
-      <section className="relative w-full pt-40 flex items-center justify-center">
+    <div className="relative bg-black/[0.96] md:pt-40 py-28 md:px-6 mx-auto">
+      <section className="relative flex items-center justify-center px-2 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9 }}
           className="relative z-10 text-center max-w-3xl px-6"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">{data.title}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">{data.title}</h1>
           <p className="text-lg md:text-xl text-zinc-300 mb-6">
             {data.description}
           </p>
@@ -47,19 +47,19 @@ export default function ServicePage({
                 inactiveZone={0.1}
                 borderWidth={2}
               />
-              <span className="relative z-10">Start Your Journey</span>
+              <span className="relative z-10 py-2 md:py-3 px-1 md:px-2 rounded-xl">Start Your Journey</span>
             </button>
           </div>
         </motion.div>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-12 px-6 md:px-20 py-20 items-center">
+      <section className="grid md:grid-cols-2 gap-12 px-2 md:px-20 py-20 items-center">
         <motion.div
           initial={{ x: -80, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl font-semibold mb-6">
+          <h2 className="text-4xl text-center md:text-left font-semibold mb-6">
             Why Choose Our {data.title}?
           </h2>
           <ul className="space-y-4 text-lg text-zinc-300">
@@ -105,7 +105,7 @@ export default function ServicePage({
           <p className="text-lg text-zinc-300 mb-8">
             Let us help you with your {data.title.toLowerCase()} needs.
           </p>
-          <button className="rounded-full px-7 py-3.5 bg-white text-black hover:bg-gray-200 cursor-pointer">
+          <button className="rounded-full px-7 py-2 md:py-3.5 bg-white text-black hover:bg-gray-200 cursor-pointer">
             Schedule a Consultation
           </button>
         </motion.div>

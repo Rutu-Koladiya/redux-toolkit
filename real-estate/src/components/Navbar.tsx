@@ -22,7 +22,7 @@ const Navbar = ({ className }: { className?: string }) => {
           <MenuItem setActive={setActive} active={active} item="Home" />
         </Link>
         <MenuItem setActive={setActive} active={active} item="Properties">
-          <div className="  text-sm grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
+          <div className="hidden text-sm md:grid grid-cols-1 md:grid-cols-2 gap-10 p-4">
             <ProductItem
               title="For Rent"
               href="/properties/for-rent"
@@ -47,6 +47,18 @@ const Navbar = ({ className }: { className?: string }) => {
               src={newProject}
               description="Explore upcoming developments, gated communities, and modern housing projects."
             />
+          </div>
+          <div className="md:hidden flex flex-col space-y-4 text-sm">
+            <HoveredLink href="/properties/for-rent">For Rent</HoveredLink>
+            <HoveredLink href="/properties/luxury-homes">
+              Luxury Homes
+            </HoveredLink>
+            <HoveredLink href="/properties/commercial-properties">
+              Commercial Properties
+            </HoveredLink>
+            <HoveredLink href="/properties/new-projects">
+              New Projects
+            </HoveredLink>
           </div>
         </MenuItem>
         <MenuItem setActive={setActive} active={active} item="Services">

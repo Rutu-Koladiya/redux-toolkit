@@ -67,10 +67,10 @@ const Agents = () => {
         colors={["#0ea5e9", "#0284c7", "#0369a1", "#475569", "#94a3b8"]}
         className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center h-full"
       >
-        <h2 className="text-2xl md:text-4xl lg:text-6xl text-white font-bold text-center mb-6">
+        <h2 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-2xl font-bold text-transparent lg:text-4xl xl:text-5xl">
           Meet Our Expert Agents
         </h2>
-        <p className="text-base md:text-lg text-white text-center mb-6">
+        <p className="mx-auto mt-4 mb-16 max-w-xl text-center text-base font-normal text-neutral-300">
           Experienced professionals ready to guide you in finding your dream
           home or the perfect investment.
         </p>

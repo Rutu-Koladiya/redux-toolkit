@@ -23,21 +23,21 @@ const services = [
     title: "Property Buying Assistance",
     description:
       "Expert guidance to find your dream property with ease and transparency.",
-    link: "/service/buy-property",
+    link: "/services/buy-property",
     cta: "Get Assistance",
   },
   {
     title: "Property Selling Assistance",
     description:
       "Professional marketing strategies to help you sell your property faster.",
-    link: "/service/sell-property",
+    link: "/services/sell-property",
     cta: "Sell with Us",
   },
   {
     title: "Property Management",
     description:
       "End-to-end rental, maintenance, and tenant management services.",
-    link: "/service/manage-property",
+    link: "/services/manage-property",
     cta: "Manage Property",
   },
   {
@@ -50,7 +50,7 @@ const services = [
     title: "Legal & Documentation",
     description:
       "Seamless paperwork, agreements, and legal compliance for stress-free deals.",
-    link: "/service/legal-documentation",
+    link: "/services/legal-documentation",
     cta: "Consult Now",
   },
 ];

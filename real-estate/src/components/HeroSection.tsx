@@ -20,7 +20,7 @@ const HerSection = () => {
           and hassle-free.
         </p>
         <div className="mt-4">
-          <Link href={"/properties"}>
+          <Link href={"/properties/for-rent"}>
             <Button
               borderRadius="1.2rem"
               className="bg-white dark:bg-[#171717] text-black dark:text-[#ededed] border-neutral-200 dark:border-slate-800"
