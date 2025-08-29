@@ -25,6 +25,8 @@ export const DirectionAwareHover = ({
     "top" | "bottom" | "left" | "right" | string
   >("left");
 
+  const [isMobileActive, setIsMobileActive] = useState(false);
+
   const handleMouseEnter = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -66,8 +68,9 @@ export const DirectionAwareHover = ({
     <motion.div
       onMouseEnter={handleMouseEnter}
       ref={ref}
+      onClick={() => setIsMobileActive((prev) => !prev)}
       className={cn(
-        "md:h-full w-60 h-60 md:w-full bg-transparent rounded-lg overflow-hidden group/card relative",
+        "md:h-full h-60 w-full bg-transparent rounded-lg overflow-hidden group/card relative",
         className
       )}
     >
@@ -76,9 +79,15 @@ export const DirectionAwareHover = ({
           className="relative h-full w-full"
           initial="initial"
           whileHover={direction}
+          animate={isMobileActive ? "active" : undefined}
           exit="exit"
         >
           <motion.div className="group-hover/card:block hidden absolute inset-0 w-full h-full bg-black/40 z-10 transition duration-500" />
+
+          {isMobileActive && (
+            <div className="absolute inset-0 w-full h-full bg-black/40 z-10 block md:hidden" />
+          )}
+
           <motion.div
             variants={variants}
             className="h-full w-full relative bg-gray-50 dark:bg-black"
@@ -167,4 +176,5 @@ const textVariants = {
     x: 20,
     opacity: 1,
   },
+  active: { opacity: 1 },
 };

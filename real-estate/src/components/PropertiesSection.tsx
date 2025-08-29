@@ -28,7 +28,7 @@ const imageMap: Record<string, StaticImageData> = {
 
 const PropertiesSection = () => {
   return (
-    <div className="bg-black/[0.96] md:pt-0 py-18 px-6 mx-auto">
+    <div className="bg-black/[0.96] md:pt-0 py-18 md:px-6 px-2 mx-auto">
       <h2 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-2xl font-bold text-transparent lg:text-4xl xl:text-5xl">
         Explore Our Properties
       </h2>

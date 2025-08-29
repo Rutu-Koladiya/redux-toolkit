@@ -51,7 +51,7 @@ const PropertyCategory = ({
   );
 
   return (
-    <div className="bg-black/[0.96] md:pt-40 py-24 px-6 mx-auto">
+    <div className="bg-black/[0.96] md:pt-40 py-24 md:px-6 px-2 mx-auto">
       <h1 className="bg-opacity-50 bg-gradient-to-b from-neutral-50 to-neutral-400 bg-clip-text text-center text-3xl font-bold text-transparent lg:text-4xl xl:text-5xl">
         {toCamelCase(category) || "Explore our properties."}
       </h1>

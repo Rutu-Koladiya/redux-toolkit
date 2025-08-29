@@ -43,7 +43,7 @@ const services = [
   {
     title: "Home Loans & Financing",
     description: "Expert help with loans, EMI planning, and financing options.",
-    link: "/service/loans",
+    link: "/services/loans",
     cta: "Apply Now",
   },
   {

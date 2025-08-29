@@ -25,7 +25,7 @@ export default function ServicePage({
   if (!data) return notFound();
 
   return (
-    <div className="relative bg-black/[0.96] md:pt-40 py-28 md:px-6 mx-auto">
+    <div className="relative bg-black/[0.96] md:pt-40 pt-28 md:px-6 mx-auto">
       <section className="relative flex items-center justify-center px-2 md:px-0">
         <motion.div
           initial={{ opacity: 0, y: 60 }}
@@ -47,7 +47,9 @@ export default function ServicePage({
                 inactiveZone={0.1}
                 borderWidth={2}
               />
-              <span className="relative z-10 py-2 md:py-3 px-1 md:px-2 rounded-xl">Start Your Journey</span>
+              <span className="relative z-10 py-2 md:py-3 px-1 md:px-2 rounded-xl">
+                Start Your Journey
+              </span>
             </button>
           </div>
         </motion.div>
@@ -75,7 +77,7 @@ export default function ServicePage({
           initial={{ x: 80, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative h-[400px]"
+          className="relative min-h-[400px] md:block hidden"
         >
           <Image
             src={data.image}
