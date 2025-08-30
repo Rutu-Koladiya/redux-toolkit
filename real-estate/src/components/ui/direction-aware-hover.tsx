@@ -8,12 +8,14 @@ import Image from "next/image";
 
 export const DirectionAwareHover = ({
   imageUrl,
+  alt,
   children,
   childrenClassName,
   imageClassName,
   className,
 }: {
   imageUrl: string;
+  alt: string;
   children: React.ReactNode | string;
   childrenClassName?: string;
   imageClassName?: string;
@@ -97,7 +99,7 @@ export const DirectionAwareHover = ({
             }}
           >
             <Image
-              alt="image"
+              alt={alt}
               className={cn(
                 "h-full w-full object-cover scale-[1.15]",
                 imageClassName

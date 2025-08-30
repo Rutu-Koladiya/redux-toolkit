@@ -46,8 +46,8 @@ const PropertiesSection = () => {
                   src={imageMap[property.imageKey]}
                   alt={property.title}
                   width={400}
-                  height={400}
-                  className="w-[300px] h-[150px] bg-cover rounded-t-3xl"
+                  height={250}
+                  className="w-full h-[200px] object-cover rounded-t-3xl"
                 />
                 <p className="text-lg sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
                   {property.title}
@@ -55,6 +55,7 @@ const PropertiesSection = () => {
                 <p className="text-sm text-neutral-600 dark:text-neutral-400 flex-grow">
                   {property.description}
                 </p>
+
                 <div className="flex flex-wrap justify-center gap-2 my-3">
                   {property.highlights.map((highlight, index) => (
                     <span
@@ -66,26 +67,29 @@ const PropertiesSection = () => {
                   ))}
                 </div>
 
-                  <div className="flex justify-end w-full mt-4 transform hover:-translate-y-1 transition duration-400">
-                    <Link href={`/properties/${property.link}`} className="flex items-center">
-                      <span>{property.cta}</span>
-                      <svg
-                        fill="none"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        width="16"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M10.75 8.75L14.25 12L10.75 15.25"
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
+                <div className="flex justify-end w-full mt-4 transform hover:-translate-y-1 transition duration-400">
+                  <Link
+                    href={`/properties/${property.link}`}
+                    className="flex items-center"
+                  >
+                    <span>{property.cta}</span>
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M10.75 8.75L14.25 12L10.75 15.25"
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </Link>
+                </div>
               </div>
             </BackgroundGradient>
           </div>

@@ -35,6 +35,17 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+select option {
+  background: black;
+  color: white;
+  padding: 12px;
+}
+
+select:focus option:checked {
+  background: teal;
+  color: white;
+}
+
 @keyframes spotlight {
   0% {
     opacity: 0;
