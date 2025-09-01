@@ -1,0 +1,40 @@
+table > thead > tr > th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.table-responsive {
+  position: relative;
+  overflow: auto;
+}
+.table-responsive::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.table-responsive::-webkit-scrollbar-track {
+  background: white;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+  background-color: #ced4da;
+  border-radius: 25px;
+  border: 3px solid #ced4da;
+}
+
+.bg-warning-subtle {
+  background-color: #f8eecc !important;
+}
+
+.bg-info-subtle {
+  background-color: #cff4fc !important;
+}
+
+.bg-success-subtle {
+  background-color: #bcf0d8 !important;
+}
+
+.bg-secondary-subtle {
+  background-color: #e2e3e5 !important;
+}
+.bg-danger-subtle {
+  background-color: #f3bdbd !important;
+}

@@ -1,7 +1,7 @@
 "use client";
 
 import { use } from "react";
-import data from "@/data/data.json";
+import data from "@/data/propertiesData.json";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { cn } from "@/utils/cn";
 import { DirectionAwareHover } from "@/components/ui/direction-aware-hover";

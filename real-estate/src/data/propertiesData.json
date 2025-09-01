@@ -55,7 +55,6 @@
       "status": "Available",
       "className": "md:col-span-2"
     },
-
     {
       "id": 6,
       "title": "Beachside Villa",
@@ -63,7 +62,7 @@
       "price": "₹4.5 Cr",
       "location": "Goa, India",
       "description": "Private villa with pool, beachfront view & premium interiors.",
-      "image": "https://images.unsplash.com/photo-1600585153937-9a08419b9625?w=900&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-1"
     },
@@ -85,7 +84,7 @@
       "price": "₹3.2 Cr",
       "location": "Delhi, India",
       "description": "Stylish penthouse with rooftop terrace & skyline view.",
-      "image": "https://images.unsplash.com/photo-1600047509807-410a5f16f3a4?w=900&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1501183638710-841dd1904471?w=900&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-1"
     },
@@ -96,7 +95,7 @@
       "price": "₹5 Cr",
       "location": "Lonavala, Maharashtra",
       "description": "Modern hilltop villa with infinity pool & valley view.",
-      "image": "https://images.unsplash.com/photo-1600047508941-67aa6d2b60dd?w=1200&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1505691723518-36a5ac3be353?w=1200&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-2"
     },
@@ -114,55 +113,55 @@
     {
       "id": 11,
       "title": "Corporate Office Space",
-      "type": "commercial",
+      "type": "commercial-properties",
       "price": "₹1.2 L/month",
       "location": "Bangalore, Karnataka",
       "description": "Premium office space in IT park, ideal for enterprises.",
-      "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=900&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=1200&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-1"
     },
     {
       "id": 12,
       "title": "Retail Shop in Mall",
-      "type": "commercial",
+      "type": "commercial-properties",
       "price": "₹65 L",
       "location": "Mumbai, Maharashtra",
       "description": "Prime retail unit in high-footfall shopping mall.",
-      "image": "https://images.unsplash.com/photo-1591244460352-1f2e3e6f91c4?w=900&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&auto=format&fit=crop",
       "status": "Sold",
       "className": "md:col-span-1"
     },
     {
       "id": 13,
       "title": "Co-Working Hub",
-      "type": "commercial",
+      "type": "commercial-properties",
       "price": "₹80,000/month",
       "location": "Hyderabad, Telangana",
       "description": "Shared coworking hub for freelancers & startups.",
-      "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=1200&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1200&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-1"
     },
     {
       "id": 14,
       "title": "IT Park Office Floor",
-      "type": "commercial",
+      "type": "commercial-properties",
       "price": "₹2.5 Cr",
       "location": "Gurgaon, Haryana",
       "description": "Full office floor with 100+ seating, cafeteria & parking.",
-      "image": "https://images.unsplash.com/photo-1507209696998-3c532be9b2b1?w=1200&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-2"
     },
     {
       "id": 15,
       "title": "Warehouse Facility",
-      "type": "commercial",
+      "type": "commercial-properties",
       "price": "₹1.1 Cr",
       "location": "Chennai, Tamil Nadu",
       "description": "Large warehouse suitable for logistics & e-commerce.",
-      "image": "https://images.unsplash.com/photo-1600585154164-47683b3d2df0?w=900&auto=format&fit=crop",
+      "image": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1200&auto=format&fit=crop",
       "status": "Available",
       "className": "md:col-span-1"
     },

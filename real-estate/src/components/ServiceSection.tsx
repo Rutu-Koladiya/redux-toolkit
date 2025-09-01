@@ -1,5 +1,6 @@
 import React from "react";
 import { HoverEffect } from "./ui/card-hover-effect";
+import { services } from "@/data/dummyData";
 
 const ServiceSection = () => {
   return (
@@ -17,40 +18,3 @@ const ServiceSection = () => {
 };
 
 export default ServiceSection;
-
-const services = [
-  {
-    title: "Property Buying Assistance",
-    description:
-      "Expert guidance to find your dream property with ease and transparency.",
-    link: "/services/buy-property",
-    cta: "Get Assistance",
-  },
-  {
-    title: "Property Selling Assistance",
-    description:
-      "Professional marketing strategies to help you sell your property faster.",
-    link: "/services/sell-property",
-    cta: "Sell with Us",
-  },
-  {
-    title: "Property Management",
-    description:
-      "End-to-end rental, maintenance, and tenant management services.",
-    link: "/services/manage-property",
-    cta: "Manage Property",
-  },
-  {
-    title: "Home Loans & Financing",
-    description: "Expert help with loans, EMI planning, and financing options.",
-    link: "/services/loans",
-    cta: "Apply Now",
-  },
-  {
-    title: "Legal & Documentation",
-    description:
-      "Seamless paperwork, agreements, and legal compliance for stress-free deals.",
-    link: "/services/legal-documentation",
-    cta: "Consult Now",
-  },
-];

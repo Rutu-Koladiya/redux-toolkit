@@ -3,7 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ["cpjlcwamma.cloudimg.io", "images.unsplash.com"],
+    domains: [
+      "cpjlcwamma.cloudimg.io",
+      "images.unsplash.com",
+      "source.unsplash.com",
+    ],
   },
 };
 

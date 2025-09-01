@@ -1,38 +1,6 @@
 import { cn } from "@/utils/cn";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-
-const realEstateTestimonials = [
-  {
-    quote:
-      "Finding our dream home felt impossible, but this agency guided us every step of the way. We couldn’t be happier with our new place!",
-    name: "Rahul Mehta",
-    title: "Home Buyer – Luxury Apartment",
-  },
-  {
-    quote:
-      "I rented a property through them, and the entire process was seamless. Professional, transparent, and stress-free!",
-    name: "Neha Sharma",
-    title: "Tenant – For Rent",
-  },
-  {
-    quote:
-      "Their team helped us invest in a commercial space that’s already bringing in great returns. Highly recommended!",
-    name: "Amit Khanna",
-    title: "Investor – Commercial Property",
-  },
-  {
-    quote:
-      "We booked our flat in a new project launch. The guidance, updates, and support they provided made everything easy.",
-    name: "Sneha Verma",
-    title: "Buyer – New Project",
-  },
-  {
-    quote:
-      "What stood out to me was their honesty. They listened to our needs and found the perfect property without pushing unnecessary options.",
-    name: "Anil Kapoor",
-    title: "Satisfied Client",
-  },
-];
+import { realEstateTestimonials } from "@/data/dummyData";
 
 const Testimonial = () => {
   return (
