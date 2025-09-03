@@ -4,24 +4,22 @@ const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      requied: true,
+      required: true,
       unique: true,
+      lowercase: true,
     },
     email: {
       type: String,
-      requied: true,
+      required: true,
       unique: true,
       lowercase: true,
     },
     password: {
       type: String,
-      requied: [true, "Password is rquired!"],
-      unique: true,
-      lowercase: true,
-      minLength: 8,
+      required: true,
     },
   },
   { timestamps: true }
 );
 
-export const UserModel = mongoose.model("User", userSchema);
+export const User = mongoose.model("User", userSchema);

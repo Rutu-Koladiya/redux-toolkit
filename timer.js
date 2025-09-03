@@ -13,7 +13,7 @@ const toMilliSecond = (timeStr) => {
   return (h * 3600 + m * 60 + s) * 1000;
 };
 
-const myTime = "18:38:00";
+const myTime = "18:33:00";
 
 function printRemainingTime() {
   let now = new Date();
