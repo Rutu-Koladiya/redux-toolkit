@@ -37,3 +37,5 @@ const videoSchema = Schema(
   },
   { timestamps: true }
 );
+
+export default Video = mongoose.model("Video", videoSchema)
