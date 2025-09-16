@@ -15,9 +15,13 @@ app.use(express.urlencoded({ extended: true, limit: "16kb" }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
+app.get("/", (req, res) => {
+  res.json("hey rutu!");
+});
+
 // routes
-import router from "./routes/user.route";
-import { registerUser } from "./contollers/user.controller";
-router.use("/api/v1/register", registerUser);
+import userRouter from "./routes/user.route.js";
+
+app.use("/api/v1", userRouter);
 
 export default app;

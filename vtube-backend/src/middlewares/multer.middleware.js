@@ -1,6 +1,6 @@
-import mutler from "multer";
+import multer from "multer";
 
-const storage = mutler.diskStorage({
+const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, "./public/temp");
   },
@@ -9,4 +9,4 @@ const storage = mutler.diskStorage({
   },
 });
 
-export const upload = mutler({ storage });
+export const upload = multer({ storage });
