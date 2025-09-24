@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
@@ -68,7 +71,7 @@ userSchema.methods.generateAccessToken = function () {
       userName: this.userName,
       fullName: this.fullName,
     },
-    process.env.JWT_SECRET_KEY,
+    process.env.ACCESS_TOKEN_SECRET_KEY,
     {
       expiresIn: process.env.ACCESS_TOKEN_EXPIRY,
     }
